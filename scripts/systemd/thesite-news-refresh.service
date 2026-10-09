@@ -1,0 +1,15 @@
+[Unit]
+Description=Keep thesite.ro news fresh and verify refresh completion
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/node /usr/local/lib/thesite-news-refresh/refresh-news.mjs
+TimeoutStartSec=150
+DynamicUser=yes
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+

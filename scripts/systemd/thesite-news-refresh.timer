@@ -1,0 +1,12 @@
+[Unit]
+Description=Check thesite.ro news freshness every five minutes
+
+[Timer]
+OnCalendar=*-*-* *:0/5:00
+RandomizedDelaySec=15
+AccuracySec=1
+Persistent=true
+Unit=thesite-news-refresh.service
+
+[Install]
+WantedBy=timers.target
