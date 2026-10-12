@@ -247,6 +247,21 @@ async function autoPostReelToInstagram() {
     } catch (e) {
       console.warn('⚠️ Eroare la scrierea istoricului Reel:', e.message);
     }
+
+    // Curățăm video-ul și fișierele media din latest/ după publicare cu succes
+    try {
+      if (fs.existsSync(latestDir)) {
+        const files = fs.readdirSync(latestDir);
+        for (const file of files) {
+          if (file.endsWith('.mp4') || file.endsWith('.png') || file.endsWith('.jpg') || file === 'caption.txt') {
+            fs.unlinkSync(path.join(latestDir, file));
+          }
+        }
+        console.log('🧹 Fișierele media din social_export/latest au fost șterse după publicare.');
+      }
+    } catch (cleanErr) {
+      console.warn('⚠️ Avertisment la ștergerea fișierelor media postate:', cleanErr.message);
+    }
   } else {
     console.log('ℹ️ Fluxul de postare s-a încheiat. Verifică captura social_export/logs/reel_10_result.png. NU marchez în istoric ca să permit retry.');
   }

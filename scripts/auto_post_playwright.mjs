@@ -310,6 +310,20 @@ async function autoPostToInstagram() {
 
   if (isDone) {
     console.log('🎉 Postare publicată cu succes pe Instagram via Playwright Browser!');
+    // Curățăm fișierele media din latest/ după publicare cu succes
+    try {
+      if (fs.existsSync(latestDir)) {
+        const files = fs.readdirSync(latestDir);
+        for (const file of files) {
+          if (file.endsWith('.png') || file.endsWith('.jpg') || file === 'caption.txt') {
+            fs.unlinkSync(path.join(latestDir, file));
+          }
+        }
+        console.log('🧹 Fișierele media din social_export/latest au fost șterse după publicare.');
+      }
+    } catch (e) {
+      console.warn('⚠️ Avertisment la ștergerea fișierelor media postate:', e.message);
+    }
   } else {
     console.log('ℹ️ Fluxul s-a încheiat. Verifică captura ig_10_post_result.png.');
   }

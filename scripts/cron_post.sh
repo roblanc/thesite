@@ -31,6 +31,7 @@ if [ "$POST_TYPE" = "reel" ]; then
   echo "=== Generare Conținut Reel & Postare $(date '+%F %T') ==="
   if npm run generate:reel && node scripts/auto_post_reel.mjs; then
     echo "=== REEL SUCCESS $(date '+%F %T') ==="
+    rm -f "$PROJECT_DIR/social_export/latest/"*.mp4 "$PROJECT_DIR/social_export/latest/"*.png 2>/dev/null || true
   else
     echo "=== REEL FAILED $(date '+%F %T') ==="
     exit 1
@@ -39,6 +40,7 @@ else
   echo "=== Generare Conținut Carousel & Postare $(date '+%F %T') ==="
   if npm run generate:social && node scripts/auto_post_playwright.mjs; then
     echo "=== CAROUSEL SUCCESS $(date '+%F %T') ==="
+    rm -f "$PROJECT_DIR/social_export/latest/"*.png "$PROJECT_DIR/social_export/latest/"*.jpg 2>/dev/null || true
   else
     echo "=== CAROUSEL FAILED $(date '+%F %T') ==="
     exit 1
