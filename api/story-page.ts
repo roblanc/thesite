@@ -19,7 +19,6 @@ import { buildStoryOgImageUrl, OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH, storyOgVersion }
  */
 
 const SITE = 'https://thesite.ro';
-const CACHE_KEY = 'aggregated_news_v2';
 const DEFAULT_IMAGE = `${SITE}/og-image.png`;
 const INDEX_TTL_MS = 5 * 60 * 1000;
 
@@ -60,11 +59,10 @@ async function findStory(id: string): Promise<AggregatedStory | null> {
         const url = UPSTASH_REDIS_REST_URL.startsWith('http') ? UPSTASH_REDIS_REST_URL : `https://${UPSTASH_REDIS_REST_URL}`;
         const redis = new Redis({ url, token: UPSTASH_REDIS_REST_TOKEN });
         try {
+            // Every story in the feed has a `story:<id>` copy; reading the whole feed to find one
+            // story cost ~600 KB of Upstash bandwidth per bot visit.
             const archived = await redis.get<AggregatedStory>(`story:${id}`);
             if (archived) return archived;
-            const latest = await redis.get<AggregatedStory[]>(CACHE_KEY);
-            const found = latest?.find(s => s.id === id);
-            if (found) return found;
         } catch (e) {
             console.error('[story-page] Redis read failed:', e);
         }

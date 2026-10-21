@@ -13,7 +13,14 @@ export const DEFAULT_LIST_LIMIT = 50;
 export const MAX_LIST_LIMIT = 100;
 
 /**
- * List responses: the cron refreshes Redis every 15 minutes, so a 5-minute edge cache keeps
+ * Card projection of the whole feed, written by the cron next to the full `aggregated_news_v2`.
+ * About a fifth of its size, so listing pages, the RSS feed, the sitemap and /api/status read
+ * this one: every read counts against the Upstash free plan's 10 GB monthly bandwidth.
+ */
+export const CARDS_CACHE_KEY = 'aggregated_news_v2_cards';
+
+/**
+ * List responses: Redis is refreshed about every 20 minutes, so a 5-minute edge cache keeps
  * new stories visible within ~5 minutes (plus one background revalidation) while most
  * visitors are served straight from the CDN.
  */

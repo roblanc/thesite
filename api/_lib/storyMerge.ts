@@ -95,3 +95,18 @@ export function mergeWithExisting(fresh: AggregatedStory[], existing: Aggregated
 
     return { merged, unmatched };
 }
+
+/**
+ * Stories whose `story:<id>` copy in Redis needs rewriting: new ones and ones whose content
+ * changed since the previous run. timeAgo is ignored, since it changes every run and readers
+ * recompute it. The rest keep the copy written earlier, whose 30-day TTL outlasts the 7 days a
+ * story stays in the feed; rewriting all 100 every run cost a third of the Upstash bandwidth.
+ */
+export function storiesToArchive(stories: AggregatedStory[], previous: AggregatedStory[]): AggregatedStory[] {
+    const before = new Map(previous.map(s => [s.id, archiveContent(s)]));
+    return stories.filter(s => before.get(s.id) !== archiveContent(s));
+}
+
+function archiveContent({ timeAgo, ...content }: AggregatedStory): string {
+    return JSON.stringify(content);
+}

@@ -14,17 +14,21 @@ import {
     projectStories,
     sortByImportance,
     storyCacheControl,
+    CARDS_CACHE_KEY,
     FALLBACK_LIST_CACHE_CONTROL,
     LIST_CACHE_CONTROL,
     MAX_LIST_LIMIT,
     NO_STORE,
 } from './_lib/newsResponse.js';
+import { toStoryCard, type StoryCard } from '../shared/storyCard.js';
 
 // Cache key și durata
 const CACHE_KEY = 'aggregated_news_v2';
 const CACHE_KEY_TS = 'aggregated_news_v2_ts';
 const CACHE_TTL = 25 * 60 * 60; // păstrăm suficient istoric cât să avem fallback dacă refresh-ul eșuează
-const STALE_AFTER = 10 * 60; // după 10 min primul vizitator declanșează refresh în background
+// După 20 min primul vizitator declanșează refresh în background. GitHub rulează cron-ul de 15 min doar
+// de câteva ori pe zi, așa că acesta e ritmul real; fiecare refresh mută ~2 MB prin Upstash (plan Free: 10 GB/lună).
+const STALE_AFTER = 20 * 60;
 const MIN_SOURCES_THRESHOLD = 2; // matches frontend filter (sourcesCount > 1) — no point storing single-source stories
 const REFRESH_LOCK_KEY = `${CACHE_KEY}:refresh_lock`;
 const REFRESH_LOCK_TTL = 5 * 60;
@@ -94,6 +98,7 @@ async function buildAndStoreLatestNews(redis: Redis, limit: number): Promise<Agg
     if (storiesToStore.length > 0) {
         await Promise.all([
             redis.set(CACHE_KEY, storiesToStore, { ex: CACHE_TTL }),
+            redis.set(CARDS_CACHE_KEY, storiesToStore.map(toStoryCard), { ex: CACHE_TTL }),
             redis.set(CACHE_KEY_TS, Date.now(), { ex: CACHE_TTL }),
         ]);
     }
@@ -181,6 +186,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 }
             }
             if (story) {
+                // Unchanged stories keep the copy written when they last changed, so timeAgo is old.
+                story = { ...story, timeAgo: getTimeAgo(story.publishedAt) };
                 res.setHeader('Cache-Control', storyCacheControl(story, servedFrom));
                 return res.status(200).json({ success: true, data: story, fromArchive: true, servedFrom });
             }
@@ -191,15 +198,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         // the default full shape is kept for the social scripts and other consumers.
         const { view, limit } = parseListQuery(req.query);
 
-        // Redis read — graceful if unavailable
+        // Redis read — graceful if unavailable. Card views read the slim card copy; the full
+        // stories are only read if it is missing (before the first cron run that writes it).
         let cached: AggregatedStory[] | null = null;
+        let cachedCards: StoryCard[] | null = null;
         let tsRaw: number | null = null;
         if (redis) {
             try {
-                [cached, tsRaw] = await Promise.all([
-                    redis.get<AggregatedStory[]>(CACHE_KEY),
-                    redis.get<number>(CACHE_KEY_TS),
-                ]);
+                if (view === 'card') {
+                    [cachedCards, tsRaw] = await Promise.all([
+                        redis.get<StoryCard[]>(CARDS_CACHE_KEY),
+                        redis.get<number>(CACHE_KEY_TS),
+                    ]);
+                }
+                if (!cachedCards?.length) {
+                    cachedCards = null;
+                    [cached, tsRaw] = await Promise.all([
+                        redis.get<AggregatedStory[]>(CACHE_KEY),
+                        redis.get<number>(CACHE_KEY_TS),
+                    ]);
+                }
             } catch (e) {
                 console.error('Redis read failed:', e);
                 // Non-fatal, just continue to fetch fresh
@@ -209,14 +227,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const cacheAge = tsRaw ? (Date.now() - tsRaw) / 1000 : Infinity;
         const isStale = cacheAge > STALE_AFTER;
 
-        if (cached && cached.length > 0) {
+        if (cachedCards || (cached && cached.length > 0)) {
             // Recalculate timeAgo at serve time — prevents stale relative timestamps from Redis
-            const freshened = cached.map(s => ({ ...s, timeAgo: getTimeAgo(s.publishedAt) }));
+            const data = cachedCards
+                ? cachedCards.slice(0, limit).map(s => ({ ...s, timeAgo: getTimeAgo(s.publishedAt) }))
+                : projectStories(cached!.map(s => ({ ...s, timeAgo: getTimeAgo(s.publishedAt) })), view, limit);
             // Instant delivery via Vercel Edge Cache
             res.setHeader('Cache-Control', LIST_CACHE_CONTROL);
             res.status(200).json({
                 success: true,
-                data: projectStories(freshened, view, limit),
+                data,
                 fromCache: true,
                 stale: isStale,
                 cacheAgeSeconds: Math.round(cacheAge),

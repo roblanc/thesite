@@ -2,6 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Redis } from '@upstash/redis';
 import type { AggregatedStory } from './_lib/aggregation.js';
 import { listArchivedStoriesForSitemap } from './_lib/storyArchive.js';
+import { CARDS_CACHE_KEY } from './_lib/newsResponse.js';
+import type { StoryCard } from '../shared/storyCard.js';
 import { buildSitemapIndex, buildStorySitemap, type SitemapStory } from './_lib/sitemapXml.js';
 
 /**
@@ -20,7 +22,9 @@ async function loadLiveStories(): Promise<SitemapStory[]> {
     try {
         const url = UPSTASH_REDIS_REST_URL.startsWith('http') ? UPSTASH_REDIS_REST_URL : `https://${UPSTASH_REDIS_REST_URL}`;
         const redis = new Redis({ url, token: UPSTASH_REDIS_REST_TOKEN });
-        const stories = (await redis.get<AggregatedStory[]>(CACHE_KEY)) || [];
+        const stories = (await redis.get<StoryCard[]>(CARDS_CACHE_KEY))
+            || (await redis.get<AggregatedStory[]>(CACHE_KEY))
+            || [];
         return stories.map(s => ({ id: s.id, lastmod: s.publishedAt }));
     } catch (e) {
         console.error('[Sitemap API] Redis read failed:', e);

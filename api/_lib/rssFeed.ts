@@ -1,9 +1,13 @@
 import type { AggregatedStory } from './aggregation.js';
+import type { StoryCard } from '../../shared/storyCard.js';
 import { biasPercentages, SITE_URL } from '../../shared/ogImage.js';
 
 /** RSS 2.0 document for /rss.xml (and /feed.xml), built from the latest aggregated stories. */
 
 const MAX_ITEMS = 50;
+
+/** The feed only reads card fields, so it is built from the slim card copy in Redis. */
+type RssStory = AggregatedStory | StoryCard;
 
 // XML 1.0 forbids most C0 control characters; some outlet feeds leak them into titles.
 // eslint-disable-next-line no-control-regex
@@ -24,7 +28,7 @@ function rfc822(value: string | undefined, fallback: string): string {
     return isNaN(date.getTime()) ? fallback : date.toUTCString();
 }
 
-function sourceNames(story: AggregatedStory): string[] {
+function sourceNames(story: RssStory): string[] {
     const names = (story.sources || [])
         .map(s => {
             const src = s?.source as unknown;
@@ -36,7 +40,7 @@ function sourceNames(story: AggregatedStory): string[] {
     return Array.from(new Set(names));
 }
 
-function itemXml(story: AggregatedStory, buildDate: string): string {
+function itemXml(story: RssStory, buildDate: string): string {
     const storyUrl = `${SITE_URL}/stire/${encodeURIComponent(story.id)}`;
     const names = sourceNames(story);
     const count = story.sourcesCount || names.length;
@@ -65,7 +69,7 @@ function itemXml(story: AggregatedStory, buildDate: string): string {
     ].filter(Boolean).join('\n');
 }
 
-export function buildRssXml(stories: AggregatedStory[], now: Date = new Date()): string {
+export function buildRssXml(stories: RssStory[], now: Date = new Date()): string {
     const buildDate = now.toUTCString();
     const items = stories.slice(0, MAX_ITEMS).map(s => itemXml(s, buildDate)).join('\n');
 

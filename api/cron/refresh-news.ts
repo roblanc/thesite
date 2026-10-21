@@ -6,9 +6,10 @@ import {
     fetchRSSFeed
 } from '../_lib/shared.js';
 import { aggregateNewsBuildTopics, AggregatedStory, applyCoverage, coverageContextFor, getTimeAgo } from '../_lib/aggregation.js';
-import { mergeWithExisting } from '../_lib/storyMerge.js';
+import { mergeWithExisting, storiesToArchive } from '../_lib/storyMerge.js';
 import { archiveStories } from '../_lib/storyArchive.js';
-import { sortByImportance } from '../_lib/newsResponse.js';
+import { sortByImportance, CARDS_CACHE_KEY } from '../_lib/newsResponse.js';
+import { toStoryCard } from '../../shared/storyCard.js';
 
 const CACHE_KEY = 'aggregated_news_v2';
 const CACHE_KEY_TS = 'aggregated_news_v2_ts';
@@ -147,14 +148,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         await Promise.all([
             redis.set(CACHE_KEY, allStories, { ex: CACHE_TTL }),
+            redis.set(CARDS_CACHE_KEY, allStories.map(toStoryCard), { ex: CACHE_TTL }),
             redis.set(CACHE_KEY_TS, Date.now(), { ex: CACHE_TTL }),
         ]);
 
-        // Archive individual stories for 30 days — enables lookup even after expiry from main feed
+        // Archive individual stories for 30 days — enables lookup even after expiry from main feed.
+        // Only new or changed stories are rewritten, to save Upstash bandwidth.
         const STORY_ARCHIVE_TTL = 30 * 24 * 60 * 60;
+        const toArchive = storiesToArchive(allStories, existingStories);
         // Awaited: un-awaited writes can be dropped when the function freezes after responding.
         const archiveResults = await Promise.allSettled(
-            allStories.map(story => redis!.set(`story:${story.id}`, story, { ex: STORY_ARCHIVE_TTL }))
+            toArchive.map(story => redis!.set(`story:${story.id}`, story, { ex: STORY_ARCHIVE_TTL }))
         );
         const archiveFailures = archiveResults.filter(r => r.status === 'rejected').length;
         if (archiveFailures > 0) console.error(`[CRON] Story archive write failed for ${archiveFailures} stories`);
@@ -181,6 +185,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 freshStories: freshStories.length,
                 carryForwardStories: carryForwardStories.length,
                 totalStored: allStories.length,
+                storyKeysWritten: toArchive.length,
                 multiSourceStories: multiSourceCount,
                 blindspots: blindspotCount,
                 feedHealth: coverageContext.feedHealth,

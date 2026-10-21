@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Redis } from '@upstash/redis';
 import { setCorsHeaders } from './_lib/cors.js';
+import { CARDS_CACHE_KEY } from './_lib/newsResponse.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     setCorsHeaders(req, res);
@@ -33,10 +34,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             url: url,
             token: process.env.UPSTASH_REDIS_REST_TOKEN!,
         });
-        const [cache, ts] = await Promise.all([
-            redis.get<unknown[]>('aggregated_news_v2'),
+        // The health check calls this hourly: count stories from the slim card copy, and fall
+        // back to the full feed only if it is missing.
+        const [cards, ts] = await Promise.all([
+            redis.get<unknown[]>(CARDS_CACHE_KEY),
             redis.get<number>('aggregated_news_v2_ts'),
         ]);
+        const cache = cards ?? await redis.get<unknown[]>('aggregated_news_v2');
         out.redis = {
             status: 'ok',
             hasCache: cache !== null,

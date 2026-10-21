@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { AggregatedStory } from './aggregation';
 import type { RSSNewsItem } from './shared';
 import { NEWS_SOURCES } from './shared';
-import { mergeWithExisting } from './storyMerge';
+import { mergeWithExisting, storiesToArchive } from './storyMerge';
 
 // Tests go through the public mergeWithExisting only, so internal threshold tweaks
 // are free as long as these behaviours hold.
@@ -130,5 +130,24 @@ describe('mergeWithExisting', () => {
         expect(mergeWithExisting([], [])).toEqual({ merged: [], unmatched: [] });
         const old = story('story-old', ['a']);
         expect(mergeWithExisting([], [old]).unmatched.map(s => s.id)).toEqual(['story-old']);
+    });
+});
+
+describe('storiesToArchive', () => {
+    it('rewrites new and changed stories, skips ones that only got a new timeAgo', () => {
+        const unchanged = story('a', ['a1', 'a2']);
+        const grown = story('b', ['b1', 'b2']);
+        const previous = [unchanged, grown];
+        const current = [
+            { ...unchanged, timeAgo: 'acum 3 ore' },
+            { ...story('b', ['b1', 'b2', 'b3']) },
+            story('c', ['c1', 'c2']),
+        ];
+
+        expect(storiesToArchive(current, previous).map(s => s.id)).toEqual(['b', 'c']);
+    });
+
+    it('rewrites everything when there is no previous feed', () => {
+        expect(storiesToArchive([story('a', ['a1', 'a2'])], []).map(s => s.id)).toEqual(['a']);
     });
 });

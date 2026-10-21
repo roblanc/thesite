@@ -3,6 +3,8 @@ import { Redis } from '@upstash/redis';
 import { setCorsHeaders } from './_lib/cors.js';
 import type { AggregatedStory } from './_lib/aggregation.js';
 import { buildRssXml } from './_lib/rssFeed.js';
+import { CARDS_CACHE_KEY } from './_lib/newsResponse.js';
+import type { StoryCard } from '../shared/storyCard.js';
 
 const CACHE_KEY = 'aggregated_news_v2';
 
@@ -26,10 +28,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         console.error('[RSS Feed] Redis init failed:', e);
     }
 
-    let stories: AggregatedStory[] = [];
+    let stories: Array<AggregatedStory | StoryCard> = [];
     if (redis) {
         try {
-            stories = (await redis.get<AggregatedStory[]>(CACHE_KEY)) || [];
+            stories = (await redis.get<StoryCard[]>(CARDS_CACHE_KEY))
+                || (await redis.get<AggregatedStory[]>(CACHE_KEY))
+                || [];
         } catch (e) {
             console.error('[RSS Feed] Redis read failed:', e);
         }
