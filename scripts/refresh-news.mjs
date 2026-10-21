@@ -3,7 +3,10 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { pathToFileURL } from 'node:url';
 
 const SITE = 'https://thesite.ro';
-const FRESH_CACHE_SECONDS = 600;
+// Any probe that finds the cache past STALE_AFTER in api/news.ts starts a refresh, so this bound only
+// decides when to keep polling. Every poll reads Redis; keep it above STALE_AFTER plus the 5-minute
+// timer gap so a healthy cycle needs one request.
+const FRESH_CACHE_SECONDS = 25 * 60;
 
 /** A stale origin request starts the existing authenticated Vercel refresh pipeline. */
 export async function ensureFreshNews({
@@ -11,7 +14,7 @@ export async function ensureFreshNews({
   now = Date.now,
   sleep = delay,
   maxWaitMs = 110_000,
-  pollIntervalMs = 5_000,
+  pollIntervalMs = 15_000,
 } = {}) {
   const deadline = now() + maxWaitMs;
   let lastProblem = 'No response';

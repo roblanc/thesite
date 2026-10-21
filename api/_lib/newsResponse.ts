@@ -20,7 +20,7 @@ export const MAX_LIST_LIMIT = 100;
 export const CARDS_CACHE_KEY = 'aggregated_news_v2_cards';
 
 /**
- * List responses: Redis is refreshed about every 20 minutes, so a 5-minute edge cache keeps
+ * List responses: Redis is refreshed every 10–15 minutes, so a 5-minute edge cache keeps
  * new stories visible within ~5 minutes (plus one background revalidation) while most
  * visitors are served straight from the CDN.
  */

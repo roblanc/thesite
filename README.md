@@ -22,7 +22,7 @@ server also runs `thesite-news-refresh.timer` every five minutes. Its dependency
 Node.js probe makes a unique `/api/news?view=card&limit=5` request to reach the origin.
 When the Redis cache is older than ten minutes, the API starts the existing
 authenticated background cron pipeline. The probe waits up to 110 seconds and
-only succeeds after observing a populated Redis cache no older than ten minutes.
+only succeeds after observing a populated Redis cache no older than twenty-five minutes.
 It requires Node.js 22+ and no copied production credentials.
 
 Install on the server as root from this checkout:

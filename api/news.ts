@@ -26,9 +26,9 @@ import { toStoryCard, type StoryCard } from '../shared/storyCard.js';
 const CACHE_KEY = 'aggregated_news_v2';
 const CACHE_KEY_TS = 'aggregated_news_v2_ts';
 const CACHE_TTL = 25 * 60 * 60; // păstrăm suficient istoric cât să avem fallback dacă refresh-ul eșuează
-// După 20 min primul vizitator declanșează refresh în background. GitHub rulează cron-ul de 15 min doar
-// de câteva ori pe zi, așa că acesta e ritmul real; fiecare refresh mută ~2 MB prin Upstash (plan Free: 10 GB/lună).
-const STALE_AFTER = 20 * 60;
+// După 10 min primul vizitator (sau sonda de pe server, scripts/refresh-news.mjs) declanșează refresh
+// în background. Fiecare refresh mută ~2 MB prin Upstash (plan Free: 10 GB/lună).
+const STALE_AFTER = 10 * 60;
 const MIN_SOURCES_THRESHOLD = 2; // matches frontend filter (sourcesCount > 1) — no point storing single-source stories
 const REFRESH_LOCK_KEY = `${CACHE_KEY}:refresh_lock`;
 const REFRESH_LOCK_TTL = 5 * 60;
