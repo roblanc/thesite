@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { chromium } from 'playwright';
+import { queueTikTokPost } from './tiktok-outbox.mjs';
 import { openInstagramPostComposer } from './instagram_composer.mjs';
 import { selectOriginalReelCrop } from './instagram_reel_crop.mjs';
 
@@ -191,6 +192,7 @@ async function autoPostReelToInstagram() {
     await snap(page, 'reel_10_result.png');
 
     if (isDone) {
+      queueTikTokPost(latestDir, 'reel');
       console.log('🎉 REEL PUBLICAT CU SUCCES pe Instagram via Playwright Browser!');
       try {
         const storyMetaPath = path.join(__dirname, '..', 'social_export', 'latest', 'story.json');

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { chromium } from 'playwright';
+import { queueTikTokPost } from './tiktok-outbox.mjs';
 import { openInstagramPostComposer } from './instagram_composer.mjs';
 
 // Verify the saved session and empty composer only; never generate/upload/share.
@@ -291,6 +292,7 @@ async function autoPostToInstagram() {
     await snap(page, 'ig_10_post_result.png');
 
     if (isDone) {
+      queueTikTokPost(latestDir, 'carousel');
       console.log('🎉 Postare publicată cu succes pe Instagram via Playwright Browser!');
       // Curățăm fișierele media din latest/ după publicare cu succes
       try {
