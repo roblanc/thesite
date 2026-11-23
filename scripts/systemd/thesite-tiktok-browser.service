@@ -7,8 +7,9 @@ After=chatgpt-desktop.service network-online.target
 User=brewuser
 Environment=DISPLAY=:10
 Environment=BROWSERCLAW_DIR=/home/brewuser/.local/state/thesite-tiktok/browserclaw
+ExecStartPre=+/usr/sbin/nft -f /etc/thesite-tiktok-proxy.nft
 ExecStartPre=/bin/sh -c "exec /usr/bin/xdpyinfo -display :10 >/dev/null"
-ExecStart=/usr/bin/dbus-run-session -- /usr/bin/browserclaw --user-data-dir=/home/brewuser/.local/state/thesite-tiktok/profile --no-first-run --no-default-browser-check https://www.tiktok.com/tiktokstudio/upload
+ExecStart=/usr/bin/dbus-run-session -- /usr/bin/browserclaw --user-data-dir=/home/brewuser/.local/state/thesite-tiktok/profile --browseros-proxy-port=19010 --no-first-run --no-default-browser-check https://www.tiktok.com/tiktokstudio/upload
 StandardOutput=journal
 Restart=on-failure
 RestartSec=5s

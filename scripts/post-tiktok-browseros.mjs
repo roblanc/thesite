@@ -7,13 +7,15 @@ import { fileURLToPath } from 'node:url';
 
 const studio = 'https://www.tiktok.com/tiktokstudio/upload';
 const profile = 'https://www.tiktok.com/@thesite.ro';
-const endpoint = 'http://127.0.0.1:9210/mcp';
+const browserConfig = process.env.THESITE_BROWSEROS_CONFIG ??
+  path.join(os.homedir(), '.local/state/thesite-tiktok/profile/.browseros/config.json');
 const outbox = fileURLToPath(new URL('../social_export/tiktok-outbox/', import.meta.url));
 const carouselFiles = ['1_cover.png', '2_headlines.png', '3_cta.png'];
 const maxAge = 45 * 60 * 1000;
 const checkOnly = process.argv.includes('--check-account');
 const previewOnly = process.argv.includes('--preview-only');
 
+let endpoint;
 let rpcId = 0;
 let sessionId;
 
@@ -274,6 +276,9 @@ async function publish(page, entry) {
 async function main() {
   const entry = checkOnly ? undefined : nextPackage();
   if (!checkOnly && !entry) return;
+  const port = JSON.parse(fs.readFileSync(browserConfig, 'utf8')).ports?.server;
+  if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('BrowserOS MCP port missing');
+  endpoint = `http://127.0.0.1:${port}/mcp`;
   await rpc('initialize', {
     protocolVersion: '2025-03-26',
     capabilities: {},

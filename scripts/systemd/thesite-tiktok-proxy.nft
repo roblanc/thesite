@@ -1,0 +1,7 @@
+destroy table inet thesite_tiktok
+table inet thesite_tiktok {
+  chain input {
+    type filter hook input priority -200; policy accept;
+    iifname != "lo" tcp dport { 19010, 19011 } drop
+  }
+}
