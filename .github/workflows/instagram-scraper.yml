@@ -1,9 +1,8 @@
 name: Instagram OCR Scraper
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Rulează zilnic la miezul nopții
-  workflow_dispatch: # Permite rularea manuală din GitHub
+  # Resume scheduled runs after the workflow has an authorized Instagram data source.
+  workflow_dispatch:
 
 jobs:
   scrape:
