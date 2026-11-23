@@ -23,7 +23,12 @@ genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash') # Flash e mai rapid și ieftin pentru OCR
 
 def scrape_instagram(username, limit=3):
-    L = instaloader.Instaloader(download_videos=False, download_geotags=False, download_comments=False)
+    L = instaloader.Instaloader(
+        download_videos=False,
+        download_geotags=False,
+        download_comments=False,
+        fatal_status_codes=[429],
+    )
     
     try:
         profile = instaloader.Profile.from_username(L.context, username)
