@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const studio = 'https://www.tiktok.com/tiktokstudio/upload';
 const profile = 'https://www.tiktok.com/@thesite.ro';
+const studioContent = 'https://www.tiktok.com/tiktokstudio/content';
 const browserConfig = process.env.THESITE_BROWSEROS_CONFIG ??
   path.join(os.homedir(), '.local/state/thesite-tiktok/profile/.browseros/config.json');
 const outbox = fileURLToPath(new URL('../social_export/tiktok-outbox/', import.meta.url));
@@ -14,6 +15,9 @@ const carouselFiles = ['1_cover.png', '2_headlines.png', '3_cta.png'];
 const maxAge = 45 * 60 * 1000;
 const checkOnly = process.argv.includes('--check-account');
 const previewOnly = process.argv.includes('--preview-only');
+const requestedPackage = process.argv.find(value => value.startsWith('--package='))?.slice('--package='.length);
+const packageIdPattern = /^[a-f0-9]{24}$/;
+const publicPostUrl = /https:\/\/www\.tiktok\.com\/@thesite\.ro\/(?:photo|video)\/\d+/;
 
 let endpoint;
 let rpcId = 0;
@@ -109,12 +113,23 @@ async function waitFor(page, predicate, timeoutMs = 12_000) {
   throw new Error('TikTok did not reach the expected screen');
 }
 
+async function declineOptionalCookies(page) {
+  // BrowserOS can mark these shadow-DOM controls disabled even when the website enables them.
+  await tool('evaluate', { page, code: `
+    const banner = document.querySelector('tiktok-cookie-banner');
+    const buttons = banner?.shadowRoot?.querySelectorAll('button') ?? [];
+    const decline = [...buttons].find(button => button.textContent.trim() === 'Decline optional cookies');
+    if (decline && !decline.disabled && decline.getClientRects().length) decline.click();
+  `, settle: true });
+}
+
 async function verifyAccount(page) {
   const tree = await waitFor(page, value => /region "Notifications"|Log in (?:to TikTok|with QR code)|origin=https:\/\/www\.tiktok\.com\/login/.test(value));
   if (/Log in to TikTok|origin=https:\/\/www\.tiktok\.com\/login/.test(tree)) {
     throw new Error('The Hetzner BrowserOS profile needs TikTok sign-in');
   }
-  const accountSection = tree.split('region "Notifications"')[1]?.split('region "Toasts"')[0] ?? '';
+  await declineOptionalCookies(page);
+  const accountSection = (await snapshot(page)).split('region "Notifications"')[1]?.split('region "Toasts"')[0] ?? '';
   await click(page, accountSection, /button .*\[collapsed\]/);
   const menu = await waitFor(page, value => /link "Profile"/.test(value));
   if (!menu.includes(`link "Profile"`) || !menu.includes(`[url="${profile}"]`)) {
@@ -125,8 +140,11 @@ async function verifyAccount(page) {
 
 function nextPackage() {
   const candidates = [];
-  for (const id of fs.readdirSync(outbox)) {
-    if (!/^[a-f0-9]{24}$/.test(id)) continue;
+  if (requestedPackage !== undefined && !packageIdPattern.test(requestedPackage)) {
+    throw new Error('Invalid TikTok package ID');
+  }
+  for (const id of requestedPackage ? [requestedPackage] : fs.readdirSync(outbox)) {
+    if (!packageIdPattern.test(id)) continue;
     const dir = path.join(outbox, id);
     if (fs.existsSync(path.join(dir, 'tiktok-attempt')) || fs.existsSync(path.join(dir, 'tiktok-published.txt'))) continue;
     const manifest = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'), 'utf8'));
@@ -135,11 +153,12 @@ function nextPackage() {
     if (
       manifest.id === id && ['carousel', 'reel'].includes(manifest.kind) &&
       JSON.stringify(manifest.files) === JSON.stringify(files) && String(manifest.title ?? '').trim() &&
-      age >= 0 && age <= maxAge && files.every(file => fs.statSync(path.join(dir, file)).size > 0)
+      age >= 0 && (requestedPackage || age <= maxAge) && files.every(file => fs.statSync(path.join(dir, file)).size > 0)
     ) {
       candidates.push({ dir, files, manifest });
     }
   }
+  if (requestedPackage && !candidates.length) throw new Error('Requested TikTok package is unavailable or already reserved');
   return candidates.sort((a, b) => b.manifest.publishedAt.localeCompare(a.manifest.publishedAt))[0];
 }
 
@@ -183,12 +202,20 @@ async function fillComposer(page, tree, manifest, photo) {
   return updated;
 }
 
-function matchingPost(tree, title) {
-  const prefix = title.trim().slice(0, 42).replace(/\s+/g, ' ').toLocaleLowerCase('ro');
-  for (const line of tree.split('\n')) {
-    const link = line.match(/https:\/\/www\.tiktok\.com\/@thesite\.ro\/(?:photo|video)\/\d+/)?.[0];
-    if (link && line.replace(/\s+/g, ' ').toLocaleLowerCase('ro').includes(prefix)) return link;
+function matchingPost(tree, manifest) {
+  const prefix = manifest.title.trim().slice(0, 42).replace(/\s+/g, ' ').toLocaleLowerCase('ro');
+  const lines = tree.split('\n');
+  const index = lines.findIndex(line =>
+    publicPostUrl.test(line) && line.replace(/\s+/g, ' ').toLocaleLowerCase('ro').includes(prefix));
+  if (index === -1) return;
+  const url = lines[index].match(publicPostUrl)[0];
+  const row = [];
+  for (const line of lines.slice(index + 1)) {
+    if (publicPostUrl.test(line)) break;
+    row.push(line);
   }
+  if (/Processing|Under review/i.test(row.join('\n')) || !row.some(line => line.includes('button "Everyone"'))) return;
+  return manifest.kind === 'carousel' ? url.replace('/video/', '/photo/') : url;
 }
 
 async function publish(page, entry) {
@@ -197,9 +224,9 @@ async function publish(page, entry) {
   let view;
   let temp;
   try {
-    view = await open(profile);
-    const existing = await waitFor(view, tree => /heading "thesite\.ro"|thesite\.ro created by/i.test(tree));
-    const existingUrl = matchingPost(existing, manifest.title);
+    view = await open(studioContent);
+    const existing = await waitFor(view, tree => publicPostUrl.test(tree), 20_000);
+    const existingUrl = matchingPost(existing, manifest);
     if (existingUrl) return existingUrl;
 
     let tree = await snapshot(page);
@@ -246,7 +273,10 @@ async function publish(page, entry) {
       }
       tree = await waitFor(page, composerVisible);
     }
-    tree = await fillComposer(page, tree, manifest, photo);
+    await declineOptionalCookies(page);
+    tree = await fillComposer(page, await snapshot(page), manifest, photo);
+    await declineOptionalCookies(page);
+    tree = await snapshot(page);
     const postRef = target(tree, /button "Post"/);
     if (!postRef) throw new Error('TikTok Post button missing after upload');
 
@@ -256,13 +286,21 @@ async function publish(page, entry) {
     }
 
     // The reservation also protects against overlapping invocations during a cutover.
-    fs.mkdirSync(path.join(dir, 'tiktok-attempt'));
-    await tool('act', { page, kind: 'click', ref: postRef, diff: 'none' });
+    const reservation = path.join(dir, 'tiktok-attempt');
+    fs.mkdirSync(reservation);
+    try {
+      await tool('act', { page, kind: 'click', ref: postRef, diff: 'none' });
+    } catch (error) {
+      // BrowserOS reports interception before sending the click. Keep the reservation
+      // for timeouts and all other cases where TikTok might have received it.
+      if (error.message.includes('the click would hit that element instead')) fs.rmdirSync(reservation);
+      throw error;
+    }
     for (let i = 0; i < 6; i++) {
       await tool('tabs', { action: 'close', page: view });
-      view = await open(profile);
-      const published = await waitFor(view, value => /heading "thesite\.ro"/.test(value));
-      const url = matchingPost(published, manifest.title);
+      view = await open(studioContent);
+      const published = await waitFor(view, value => publicPostUrl.test(value), 20_000);
+      const url = matchingPost(published, manifest);
       if (url) return url;
       await sleep(5000);
     }
