@@ -96,6 +96,8 @@ async function run() {
 
   const outDir = path.join(__dirname, '..', 'social_export', 'latest');
   fs.mkdirSync(outDir, { recursive: true });
+  const tiktokDir = path.join(outDir, 'tiktok');
+  fs.rmSync(tiktokDir, { recursive: true, force: true });
 
   const builders = { poster: buildHtmlSlidesPoster, v2: buildHtmlSlidesV2, current: buildHtmlSlides };
   const build = builders[nextDesign('carousel')] || buildHtmlSlides;
@@ -115,14 +117,27 @@ async function run() {
     { name: '3_cta.png', html: slide3 },
   ];
 
-  const generatedImages = [];
   for (const s of slides) {
     await page.setContent(s.html, { waitUntil: 'networkidle' });
     await page.waitForTimeout(500);
     const savePath = path.join(outDir, s.name);
     await page.screenshot({ path: savePath, type: 'png' });
-    generatedImages.push(savePath);
     console.log(`  ✓ Saved ${s.name}`);
+  }
+
+  if (fs.existsSync(path.join(path.dirname(outDir), 'tiktok-outbox'))) {
+    try {
+      const tiktok = buildHtmlSlidesPoster(story, { tiktok: true });
+      const tiktokPage = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
+      fs.mkdirSync(tiktokDir);
+      for (const [index, html] of [tiktok.slide1, tiktok.slide2, tiktok.slide3].entries()) {
+        await tiktokPage.setContent(html, { waitUntil: 'networkidle' });
+        await tiktokPage.screenshot({ path: path.join(tiktokDir, slides[index].name), type: 'png' });
+      }
+    } catch (error) {
+      fs.rmSync(tiktokDir, { recursive: true, force: true });
+      console.warn(`TikTok carousel rendering failed: ${error.message}`);
+    }
   }
 
   await browser.close();

@@ -23,8 +23,10 @@ export function queueTikTokPost(latestDir, kind) {
     if (fs.existsSync(destination)) return;
 
     staging = fs.mkdtempSync(path.join(outbox, '.pending-'));
+    const tiktokDir = path.join(latestDir, 'tiktok');
+    const mediaDir = kind === 'carousel' && fs.existsSync(tiktokDir) ? tiktokDir : latestDir;
     for (const file of mediaFiles[kind]) {
-      fs.copyFileSync(path.join(latestDir, file), path.join(staging, file));
+      fs.copyFileSync(path.join(mediaDir, file), path.join(staging, file));
     }
 
     const publishedAt = new Date().toISOString();

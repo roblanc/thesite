@@ -37,10 +37,10 @@ function css(width, height) {
   .clamp{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}`;
 }
 
-function doc(width, height, body, script = '') {
+function doc(width, height, body, script = '', extraStyles = '') {
   return `<!DOCTYPE html><html lang="ro"><head><meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="${FONTS_HREF}" rel="stylesheet"><style>${css(width, height)}</style></head>
+<link href="${FONTS_HREF}" rel="stylesheet"><style>${css(width, height)}</style>${extraStyles ? `<style>${extraStyles}</style>` : ''}</head>
 <body>${body}${script ? `<script>${script}</script>` : ''}</body></html>`;
 }
 
@@ -61,7 +61,7 @@ function biasBlock(b, { num = 120, bar = 44, label = 20, gap = 18 } = {}) {
   return `
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
     ${CAMPS.map(([k, n], i) => `<div style="text-align:${align[i]}">
-      <div class="cas" style="font-size:${num}px;line-height:.9;color:${NUM[k]}">${b[k]}%</div>
+      <div class="cas number" style="font-size:${num}px;line-height:.9;color:${NUM[k]}">${b[k]}%</div>
       <div class="mono" style="font-size:${label}px;margin-top:8px">${n}</div></div>`).join('')}
   </div>
   <div style="display:flex;height:${bar}px;margin-top:${gap}px;background:#2a2a2a">
@@ -183,13 +183,15 @@ export function buildReelHtml(story) {
 
 // ------------------------------------------------------------ Carousel (1080x1350)
 
-export function buildHtmlSlides(story) {
+export function buildHtmlSlides(story, { tiktok = false } = {}) {
   const b = biasPercents(story);
   const total = story.sourcesCount || story.sources?.length || 0;
   const images = pickImages(story);
   const heads = pickHeadlines(story);
   const date = storyDate(story);
   const title = story.title || '';
+
+  if (tiktok) return buildTikTokSlides({ b, total, images, heads, date, title });
 
   const slide1 = doc(1080, 1350, `
     <div class="abs" style="display:flex;flex-direction:column">
@@ -225,5 +227,53 @@ export function buildHtmlSlides(story) {
       </div>
     </div>`);
 
+  return { slide1, slide2, slide3 };
+}
+
+// Keep the right rail and the lower caption area clear on every slide.
+const TIKTOK_SAFE = { top: 150, right: 216, bottom: 520, left: 76 };
+const TIKTOK_STYLES = `
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=Inter:wght@400;600;700&display=swap');
+  body,.cas{font-family:Inter,Arial,sans-serif}
+  .cas{font-weight:700;letter-spacing:-.035em}
+  .number{font-family:'Barlow Semi Condensed',Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.045em}
+`;
+
+function buildTikTokSlides({ b, total, images, heads, date, title }) {
+  const { top, right, bottom, left } = TIKTOK_SAFE;
+  const safe = `top:${top}px;right:${right}px;bottom:${bottom}px;left:${left}px`;
+  const renderSlide = body => doc(1080, 1920, body, '', TIKTOK_STYLES);
+  const slide1 = renderSlide(`
+    <div class="abs">
+      ${duotone(images, b, 'height:594px')}
+      <div style="position:absolute;top:0;left:0;right:0;height:594px;background:linear-gradient(0deg,#0e0e0e,transparent 26%)"></div>
+      <div style="position:absolute;top:616px;left:${left}px;right:${right}px">
+        <div class="mono" style="color:${C.right};font-size:21px">thesite.ro · 1/3 · ${total} redacții · ${esc(date)}</div>
+        <div class="cas clamp" style="-webkit-line-clamp:4;font-size:${titleSize(title, 70)}px;line-height:1.12;margin-top:22px">${esc(title)}</div>
+      </div>
+      <div style="position:absolute;top:1037px;left:${left}px;right:${right}px">${biasBlock(b, { num: 108, bar: 36, label: 24, gap: 26 })}</div>
+    </div>`);
+  const slide2 = renderSlide(`
+    <div style="position:absolute;${safe};display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div class="cas" style="font-size:72px;line-height:1.03">Trei tabere,<br>trei titluri</div>
+        <span class="mono" style="font-size:22px">2/3</span>
+      </div>
+      <div style="min-height:0;flex:1;display:flex;flex-direction:column">
+        ${CAMPS.map(([k]) => band(heads[k], k, { pad: '22px 30px', label: 22, text: 36, lines: 4 })).join('')}
+      </div>
+    </div>`);
+  const slide3 = renderSlide(`
+    <div style="position:absolute;${safe};display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div class="cas" style="font-size:80px;line-height:1.02">${total} redacții.<br><span style="color:${C.right}">Cine a scris?</span></div>
+        <span class="mono" style="font-size:22px">3/3</span>
+      </div>
+      <div style="margin-top:auto">${biasBlock(b, { num: 119, bar: 300, label: 24, gap: 24 })}</div>
+      <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:center">
+        <span class="cas" style="font-size:42px">thesite.ro</span>
+        <span class="mono" style="font-size:22px;background:#fff;color:${C.ink};padding:14px 20px">link în bio →</span>
+      </div>
+    </div>`);
   return { slide1, slide2, slide3 };
 }
