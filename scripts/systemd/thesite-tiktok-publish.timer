@@ -1,0 +1,10 @@
+[Unit]
+Description=Publish TheSite TikTok posts after the four Instagram slots
+
+[Timer]
+OnCalendar=*-*-* 05,10,15,18:40:00 UTC
+AccuracySec=15s
+Unit=thesite-tiktok-publish.service
+
+[Install]
+WantedBy=timers.target

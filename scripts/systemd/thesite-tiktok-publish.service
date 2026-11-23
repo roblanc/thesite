@@ -1,0 +1,11 @@
+[Unit]
+Description=Publish confirmed TheSite Instagram media to TikTok
+Requires=thesite-tiktok-browser.service
+After=thesite-tiktok-browser.service
+
+[Service]
+Type=oneshot
+User=brewuser
+WorkingDirectory=/home/brewuser/projects/thesite
+ExecStart=/usr/local/bin/node /home/brewuser/projects/thesite/scripts/post-tiktok-browseros.mjs
+TimeoutStartSec=5min
