@@ -230,13 +230,17 @@ export function buildHtmlSlides(story, { tiktok = false } = {}) {
   return { slide1, slide2, slide3 };
 }
 
-// Keep the right rail and the lower caption area clear on every slide.
-const TIKTOK_SAFE = { top: 150, right: 216, bottom: 520, left: 76 };
+// TikTok Photo Mode on iOS clips 9:16 slides into a ~3:4 viewport (~y=229..1691) and
+// overlays the top search bar up to y≈332, the right action rail from x≈939, pagination
+// dots around y≈1575, and full-screen captions below y≈1500. Keep all content inside this band.
+const TIKTOK_SAFE = { top: 356, right: 216, bottom: 430, left: 76 };
+const TIKTOK_PHOTO_HEIGHT = 490;
 const TIKTOK_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=Inter:wght@400;600;700&display=swap');
   body,.cas{font-family:Inter,Arial,sans-serif}
   .cas{font-weight:700;letter-spacing:-.035em}
   .number{font-family:'Barlow Semi Condensed',Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.045em}
+  .duo img{object-position:center 22%}
 `;
 
 function buildTikTokSlides({ b, total, images, heads, date, title }) {
@@ -245,31 +249,31 @@ function buildTikTokSlides({ b, total, images, heads, date, title }) {
   const renderSlide = body => doc(1080, 1920, body, '', TIKTOK_STYLES);
   const slide1 = renderSlide(`
     <div class="abs">
-      ${duotone(images, b, 'height:594px')}
-      <div style="position:absolute;top:0;left:0;right:0;height:594px;background:linear-gradient(0deg,#0e0e0e,transparent 26%)"></div>
-      <div style="position:absolute;top:616px;left:${left}px;right:${right}px">
+      ${duotone(images, b, `position:absolute;top:${top}px;left:0;right:0;height:${TIKTOK_PHOTO_HEIGHT}px`)}
+      <div style="position:absolute;top:${top}px;left:0;right:0;height:${TIKTOK_PHOTO_HEIGHT}px;background:linear-gradient(0deg,#0e0e0e,transparent 26%)"></div>
+      <div style="position:absolute;top:${top + TIKTOK_PHOTO_HEIGHT + 20}px;bottom:${bottom}px;left:${left}px;right:${right}px;display:flex;flex-direction:column">
         <div class="mono" style="color:${C.right};font-size:21px">thesite.ro · 1/3 · ${total} redacții · ${esc(date)}</div>
-        <div class="cas clamp" style="-webkit-line-clamp:4;font-size:${titleSize(title, 70)}px;line-height:1.12;margin-top:22px">${esc(title)}</div>
+        <div class="cas clamp" style="-webkit-line-clamp:4;font-size:${titleSize(title, 68)}px;line-height:1.1;margin-top:18px">${esc(title)}</div>
+        <div style="margin-top:auto">${biasBlock(b, { num: 108, bar: 36, label: 24, gap: 24 })}</div>
       </div>
-      <div style="position:absolute;top:1037px;left:${left}px;right:${right}px">${biasBlock(b, { num: 108, bar: 36, label: 24, gap: 26 })}</div>
     </div>`);
   const slide2 = renderSlide(`
-    <div style="position:absolute;${safe};display:flex;flex-direction:column;gap:28px">
+    <div style="position:absolute;${safe};display:flex;flex-direction:column;gap:24px">
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
-        <div class="cas" style="font-size:72px;line-height:1.03">Trei tabere,<br>trei titluri</div>
+        <div class="cas" style="font-size:68px;line-height:1.02">Trei tabere,<br>trei titluri</div>
         <span class="mono" style="font-size:22px">2/3</span>
       </div>
       <div style="min-height:0;flex:1;display:flex;flex-direction:column">
-        ${CAMPS.map(([k]) => band(heads[k], k, { pad: '22px 30px', label: 22, text: 36, lines: 4 })).join('')}
+        ${CAMPS.map(([k]) => band(heads[k], k, { pad: '20px 28px', label: 20, text: 34, lines: 4 })).join('')}
       </div>
     </div>`);
   const slide3 = renderSlide(`
     <div style="position:absolute;${safe};display:flex;flex-direction:column">
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
-        <div class="cas" style="font-size:80px;line-height:1.02">${total} redacții.<br><span style="color:${C.right}">Cine a scris?</span></div>
+        <div class="cas" style="font-size:74px;line-height:1.02">${total} redacții.<br><span style="color:${C.right}">Cine a scris?</span></div>
         <span class="mono" style="font-size:22px">3/3</span>
       </div>
-      <div style="margin-top:auto">${biasBlock(b, { num: 119, bar: 300, label: 24, gap: 24 })}</div>
+      <div style="margin-top:auto">${biasBlock(b, { num: 116, bar: 260, label: 24, gap: 22 })}</div>
       <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:center">
         <span class="cas" style="font-size:42px">thesite.ro</span>
         <span class="mono" style="font-size:22px;background:#fff;color:${C.ink};padding:14px 20px">link în bio →</span>

@@ -61,6 +61,22 @@ describe('social_poster carousel', () => {
   });
 });
 
+describe('social_poster tiktok carousel', () => {
+  const { slide1, slide2, slide3 } = buildHtmlSlides(story, { tiktok: true });
+
+  it('frames cover photo and copy below TikTok Photo Mode top crop and search bar', () => {
+    expect(slide1).toContain('width:1080px;height:1920px');
+    expect(slide1).toContain('top:356px;left:0;right:0;height:490px');
+    expect(slide1).toContain('top:866px;bottom:430px;left:76px;right:216px');
+  });
+
+  it('keeps headlines and CTA slides inside TikTok Photo Mode vertical safe bounds', () => {
+    for (const slide of [slide2, slide3]) {
+      expect(slide).toContain('top:356px;right:216px;bottom:430px;left:76px');
+    }
+  });
+});
+
 describe('social_poster reel', () => {
   it('builds a frame-driven page with the cover fallback chain', () => {
     const html = buildReelHtml(story);

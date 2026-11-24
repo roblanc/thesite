@@ -132,6 +132,7 @@ async function run() {
       fs.mkdirSync(tiktokDir);
       for (const [index, html] of [tiktok.slide1, tiktok.slide2, tiktok.slide3].entries()) {
         await tiktokPage.setContent(html, { waitUntil: 'networkidle' });
+        await tiktokPage.evaluate(() => document.fonts.ready);
         await tiktokPage.screenshot({ path: path.join(tiktokDir, slides[index].name), type: 'png' });
       }
     } catch (error) {
