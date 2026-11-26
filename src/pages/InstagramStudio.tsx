@@ -45,16 +45,16 @@ export default function InstagramStudio() {
   }), [featuredStory]);
 
   const sampleLeft = leftSources[0] || { 
-    source: { name: 'G4Media / Libertatea', url: 'https://g4media.ro', bias: 'left' }, 
-    title: featuredStory?.title || 'Perspectiva orientată pe reforme și societate civilă'
+    source: { name: 'HotNews / PressOne', url: 'https://hotnews.ro', bias: 'center-left' }, 
+    title: featuredStory?.title || 'Perspectiva orientată pe impact social și instituțional'
   };
   const sampleCenter = centerSources[0] || { 
-    source: { name: 'HotNews / Digi24', url: 'https://hotnews.ro', bias: 'center' }, 
+    source: { name: 'ProTV / Digi24', url: 'https://digi24.ro', bias: 'center' }, 
     title: featuredStory?.title || 'Faptele prezentate echilibrat și declarațiile oficiale'
   };
   const sampleRight = rightSources[0] || { 
-    source: { name: 'Antena 3 / România TV', url: 'https://antena3.ro', bias: 'right' }, 
-    title: featuredStory?.title || 'Accent pe impactul economic și deciziile guvernamentale'
+    source: { name: 'Realitatea Plus / România TV', url: 'https://realitatea.net', bias: 'right' }, 
+    title: featuredStory?.title || 'Accent pe critica establishment-ului și discurs conservator'
   };
 
   const getDominantBadge = (story: any) => {

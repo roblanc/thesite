@@ -110,50 +110,51 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
   mediafax: {
     id: 'mediafax',
     foundedYear: 1991,
-    currentOwner: 'Mediafax Group',
+    currentOwner: 'Titluri Quality SRL (Radu Budeanu) — din ianuarie 2025',
+    parentCompany: 'Titluri Quality (include Gândul, Cancan, ProSport, G4Media)',
     ownershipHistory:
-      'Una dintre primele agenții de presă private din România post-comunistă, fondată în 1991. A trecut prin mai mulți acționari.',
+      'Una dintre primele agenții de presă private din România post-comunistă, fondată în 1991 de Adrian Sârbu. După insolvență și administrarea prin Mediamex Investment (Dan Șucu / Adrian Sârbu), brandul Mediafax, site-ul și fluxul de știri au fost achiziționate în ianuarie 2025 de Titluri Quality SRL (deținută de Radu Budeanu).',
     fundingSources: ['Abonamente B2B', 'Publicitate'],
     editorialLine:
-      'Agenție de presă privată cu focus pe știri economice, politice și generale. Format factual orientat spre clienți media și corporate.',
+      'Agenție de presă privată cu focus pe știri politice, economice și generale. Format predominant factual orientat spre clienți media și corporate.',
     biasRationale:
-      'Agenție privată fără afiliații politice evidente. Modelul de business bazat pe abonamente B2B reduce dependența de publicitate politică. Conținutul este în general factual și echilibrat.',
+      'Ca agenție de presă cu model B2B, fluxul de știri rămâne în mare parte factual și centrist. Preluarea din ianuarie 2025 de către Titluri Quality (Radu Budeanu, proprietarul Gândul și Cancan) justifică monitorizarea și un ușor scor pozitiv în zona de centru (+10), fără a indica un partizanat editorial explicit pe fluxul de agenție.',
     strengths: ['Viteza știrilor', 'Acoperire economică', 'Format factual'],
-    factualityRationale: 'Agenție cu standarde profesionale ridicate.',
-    lastAnalysed: '2026-02-26',
+    factualityRationale: 'Agenție cu tradiție și standarde profesionale ridicate.',
+    lastAnalysed: '2026-11-26',
   },
 
   bursa: {
     id: 'bursa',
     foundedYear: 1990,
-    currentOwner: 'Proprietate privată',
+    currentOwner: 'Grupul de Presă Bursa (Meta Ring SRL)',
     ownershipHistory:
-      'Una dintre cele mai vechi publicații economice private din România, fondată imediat după 1989.',
+      'Una dintre cele mai vechi publicații economice private din România, fondată în 1990 și editată prin Grupul de Presă Bursa (Meta Ring SRL).',
     fundingSources: ['Publicitate', 'Abonamente'],
     editorialLine:
       'Publicație economică axată pe piețe financiare, bursă, economie macro și micro.',
     biasRationale:
-      'Publicație pur economică fără bias politic evident. Acoperirea focusată pe economia de piață implică o ușoară tendință pro-piață liberă, dar fără partizanism politic.',
+      'Publicație economică fără afiliere de partid evidentă. Acoperirea orientată spre piața de capital și mediul de afaceri implică o ușoară tendință pro-piață liberă (+10), rămânând în zona de centru.',
     strengths: ['Specialitate financiară', 'Tradiție îndelungată', 'Date de piață'],
     factualityRationale: 'Factualitate ridicată în domeniul financiar.',
-    lastAnalysed: '2026-02-26',
+    lastAnalysed: '2026-11-26',
   },
 
   biziday: {
     id: 'biziday',
-    foundedYear: 2015,
-    founders: ['Mihai Precup', 'Alexandru Negrea'],
-    currentOwner: 'Echipa fondatoare (independent)',
+    foundedYear: 2016,
+    founders: ['Moise Guran'],
+    currentOwner: 'Moise Guran (independent)',
     ownershipHistory:
-      'Lansat în 2015 ca newsletter de curatorie a știrilor economice. Crescut organic prin calitatea selecției editoriale.',
-    fundingSources: ['Abonamente premium', 'Publicitate selectivă'],
+      'Lansat în 2016 ca aplicație și platformă de agregare/curatorie de știri de către jurnalistul Moise Guran, după o carieră îndelungată în televiziune și radio (TVR, Digi24, Europa FM).',
+    fundingSources: ['Publicitate', 'Proiecte editoriale'],
     editorialLine:
-      'Newsletter/site de curatorie zilnică a știrilor economice și generale. Fără opinie politică explicită — selecție editorială de calitate.',
+      'Platformă și aplicație de știri scurte, verificate și agregate zilnic, cu accent pe actualitate internă, economie și externe.',
     biasRationale:
-      'Biziday funcționează ca un curator editorial, nu ca o redacție tradițională. Modelul de abonamente asigură independența față de presiunile publicității politice. Selecția poate reflecta o ușoară tendință pro-business, dar fără partizanism.',
-    strengths: ['Independență editorială', 'Model sustenabil prin abonamente', 'Curatorie de calitate'],
-    factualityRationale: 'Factualitate bună prin curatoria surselor diverse.',
-    lastAnalysed: '2026-02-26',
+      'Biziday funcționează ca o redacție de sinteză și curatorie rapidă, fără agendă de partid. Titlurile și selecția editorială sunt orientate spre claritate și informație factuală, plasând publicația în centrul spectrului (0).',
+    strengths: ['Independență editorială', 'Sinteză rapidă', 'Standarde bune de verificare'],
+    factualityRationale: 'Factualitate bună prin selecția și verificarea surselor primare.',
+    lastAnalysed: '2026-11-26',
   },
 
   // ===================== TV & RADIO MAINSTREAM =====================
@@ -248,7 +249,7 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     ],
   },
 
-  // ===================== CENTRU-STÂNGA =====================
+  // ===================== MAINSTREAM, INVESTIGAȚII & CENTRU-STÂNGA =====================
 
   digi24: {
     id: 'digi24',
@@ -265,26 +266,26 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     ],
     fundingSources: ['Publicitate (inclusiv publicitate politică de campanie)', 'Distribuție în pachetele Digi', 'Proiecte speciale'],
     editorialLine:
-      'Canal de știri TV 24/7, cu acoperire națională și focus pe actualitate politică, economică și internațională. Include jurnale de știri, talk-show-uri, analize și investigații, cu un profil pro-european și pro-reformă.',
+      'Canal de știri TV 24/7, cu acoperire națională și focus pe actualitate politică, economică și internațională. Include jurnale de știri, talk-show-uri, analize și relatări live, cu un profil mainstream pro-european și instituțional.',
     biasRationale:
-      'Digi24 este adesea perceput ca unul dintre posturile relativ mai echilibrate din peisajul TV românesc, iar evaluări externe (MediaBiasFactCheck) îl notează ca „least biased" cu factualitate ridicată. Bias-ul estimat centru / ușor centru-stânga vine din accentul pus pe subiecte pro-UE, pro-anticorupție și critice față de extremism și populism, fără o aliniere clară și constantă cu un anumit partid. Există însă perioade în care unele voci din spațiul public au acuzat postul de apropiere de pozițiile partidelor de guvernare, ceea ce justifică o „încredere medie", nu maximă. Această încadrare este o estimare editorială proprie.',
+      'Digi24 este evaluat de Media Bias/Fact Check ca „Least Biased” (centru) cu factualitate ridicată. În peisajul românesc, postul menține o linie mainstream pro-europeană, pro-business și instituțională, fiind criticat periodic din opoziție pentru o atitudine relativ acomodantă față de coalițiile de guvernare (în special zona PNL/establishment). Clasificarea anterioară de centru-stânga nu era susținută de conținut: scorul de +5 reflectă o poziționare de centru.',
     notablePatterns: [
       'Acoperire extinsă a UE și politicii externe, inclusiv dezbateri pe teme europene',
-      'Dezbateri cu invitați din mai multe zone politice, cu moderare percepută ca mai critică față de extremism',
-      'Investigații și analize, deși nu la nivelul outlet-urilor strict investigative',
+      'Dezbateri cu invitați din mai multe zone politice, cu ton mainstream și instituțional',
+      'Format de știri 24/7 cu accent pe breaking news și declarații oficiale',
     ],
     controversies: [
       'Amendamente PSD (2022) vizând forțarea vânzării Digi24 de către RCS&RDS',
-      'Acuzații periodice de apropiere de pozițiile guvernării în funcție',
+      'Acuzații periodice de apropiere de pozițiile guvernării în funcție și de publicitate politică netransparentă',
       'Interesele Digi în telecom pot influența acoperirea subiectelor legate de reglementare',
     ],
     strengths: [
       'Profesionalism editorial și producție TV bine standardizată',
       'Acoperire cuprinzătoare a politicii interne și externe, inclusiv live-uri extinse',
-      'Percepție relativ mai bună de echilibru comparativ cu alte posturi de știri românești',
+      'Percepție relativ bună de echilibru comparativ cu alte posturi de știri românești',
     ],
     factualityRationale: 'Factualitate ridicată: acoperire live extinsă, utilizează agenții de presă și corespondenți, nu este cunoscut pentru dezinformare sistematică. Evaluări independente (MBFC, Reuters Institute) îl menționează ca brand relativ de încredere.',
-    lastAnalysed: '2026-02-27',
+    lastAnalysed: '2026-11-26',
     references: [
       { label: 'Wikipedia – Digi24', url: 'https://en.wikipedia.org/wiki/Digi24' },
       { label: 'Eurotopics – Fișă Digi24 (proprietate, Campus Media TV SRL)', url: 'https://www.eurotopics.net/en/163061/digi-24' },
@@ -298,21 +299,22 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
   hotnews: {
     id: 'hotnews',
     foundedYear: 1999,
-    currentOwner: 'Ringier Romania',
-    parentCompany: 'Ringier AG (Elveția)',
+    founders: ['Ionel Mărgărit Timbolschi', 'Manuela Preoteasa'],
+    currentOwner: 'ZYX Publishing Group (Dragoș Vîlcu 66%, Pluralis B.V. / MDIF 17%, Răzvan Ionescu 15%)',
+    parentCompany: 'ZYX Publishing Group / Media Bit Software SRL',
     ownershipHistory:
-      'Unul dintre cele mai vechi site-uri de știri online din România (1999). Achiziționat de grupul elvețian Ringier, unul dintre cele mai mari grupuri media europene.',
+      'Unul dintre primele portaluri de știri online din România (fondat în 1999, operat istoric prin Media Bit Software SRL). În septembrie 2022 a fost achiziționat integral de grupul controlat de Dragoș Vîlcu (Multimedia Est / ZYX Publishing Group). În 2026, fondul olandez Pluralis B.V. (administrat de MDIF pentru susținerea presei independente) a intrat în acționariat cu 17%. HotNews nu a aparținut niciodată trustului Ringier.',
     politicalConnections: [
-      'Ringier AG — grup media internațional elvețian, fără afilieri politice românești directe',
+      'Acționariat privat românesc și fond internațional de investiții media (Pluralis / MDIF), fără afiliere la un partid politic',
     ],
-    fundingSources: ['Publicitate', 'Conținut sponsorizat', 'Abonamente'],
+    fundingSources: ['Publicitate', 'Investiții de capital (ZYX / Pluralis)', 'Contribuții cititori'],
     editorialLine:
-      'Site de știri online de referință. Acoperire serioasă a politicii, economiei și societății. Tendință pro-europeană și pro-reformă.',
+      'Site de știri online de referință. Acoperire extinsă a politicii, economiei, societății și investigațiilor de interes public, cu ton pro-european și civic.',
     biasRationale:
-      'HotNews beneficiază de independența față de politica românească prin proprietarul elvețian Ringier. Reputație de seriozitate și factualitate. Tendința centru-stânga se manifestă mai ales prin alegerea subiectelor (anti-corupție, pro-UE, critici ale populismului) decât prin bias explicit în știri.',
-    strengths: ['Experiență îndelungată', 'Jurnaliști de calitate', 'Acoperire comprehensivă'],
-    factualityRationale: 'Factualitate bună. Standarde profesioniste.',
-    lastAnalysed: '2026-02-26',
+      'Media Bias/Fact Check încadrează HotNews.ro la „Left-Center” (centru-stânga) cu factualitate ridicată, iar euro|topics îl descrie ca independent și formal neutru. Tendința ușoară de centru-stânga (-20, exact la limita cu centrul) se manifestă prin selecția subiectelor civice, sociale și anti-corupție, cu un editorial echilibrat în știrile curente.',
+    strengths: ['Experiență îndelungată', 'Jurnaliști de calitate', 'Acoperire comprehensivă și investigații'],
+    factualityRationale: 'Factualitate ridicată (confirmată de Media Bias/Fact Check). Standarde profesioniste.',
+    lastAnalysed: '2026-11-26',
   },
 
   recorder: {
@@ -321,7 +323,7 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     founders: ['Cristian Delcea', 'Mihai Voinea', 'Răzvan Ionescu', 'Iulian Andrei Crăciun'],
     currentOwner: 'Asociația Recorder Community (ONG de presă independentă)',
     ownershipHistory:
-      'Fondat în 2017 de jurnaliștii Cristian Delcea, Mihai Voinea, Răzvan Ionescu și Iulian Andrei Crăciun. Proiectul a funcționat inițial prin firma Harfa Online Publishing SRL, unde aproape jumătate din acțiuni erau deținute de Dragoș Vîlcu Management SRL (Dragoș Vîlcu + tatăl său), restul de jurnaliștii fondatori. Modelul actual de funcționare este centrat pe Asociația Recorder Community, ONG care derulează activitatea editorială și colectează donațiile.',
+      'Fondat în 2017 de jurnaliștii Cristian Delcea, Mihai Voinea, Răzvan Ionescu și Iulian Andrei Crăciun. Proiectul a funcționat inițial prin firma Harfa Online Publishing SRL, unde aproape jumătate din acțiuni erau deținute de Dragoș Vîlcu Management SRL, restul de jurnaliștii fondatori. Modelul actual de funcționare este centrat pe Asociația Recorder Community, ONG care derulează activitatea editorială și colectează donațiile.',
     politicalConnections: ['Fără afiliații politice directe cunoscute'],
     fundingSources: [
       'Donații și contribuții recurente de la public (~90% din venituri)',
@@ -331,11 +333,11 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     editorialLine:
       'Proiect de jurnalism de investigație și documentar independent, cu focus pe subiecte de interes public: corupție, administrație, justiție, sănătate, educație, infrastructură. Conținutul principal este video (documentare, reportaje), completat de texte explicative și materiale de context.',
     biasRationale:
-      'Recorder își asumă explicit valori precum lupta împotriva corupției, transparență instituțională și responsabilizarea puterii politice, în linie cu standardele jurnalismului de interes public. În contextul românesc, accentul pus pe instituții puternice, servicii publice funcționale și protecția cetățeanului poate fi perceput ca ușor centru-stânga, dar nu există un bias partizan clar în favoarea unui partid sau actor politic anume.',
+      'Recorder este o redacție de investigație transpartinică ce vizează abuzurile instituționale și corupția indiferent de partidul aflat la putere (PSD, PNL, USR, instituții publice sau BOR). Jurnalismul anticorupție nu este în sine „de stânga”; accentul pe responsabilitate publică și servicii publice funcționale justifică cel mult o ușoară înclinație civic-reformistă în interiorul zonei de centru (-15), fără partizanat ideologic.',
     notablePatterns: [
       'Investigații profunde, bazate pe documente și surse primare',
       'Documentare video de impact social, cu audiențe mari și efecte în agenda publică',
-      'Acoperire de durată a unor dosare și teme sistemice (infrastructură, justiție, administrație)',
+      'Acoperire transpartinică a unor dosare și teme sistemice (infrastructură, justiție, administrație)',
     ],
     strengths: [
       'Independență editorială susținută de un model de finanțare centrat pe donații',
@@ -343,7 +345,7 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
       'Transparență financiară, cu rapoarte anuale detaliate puse la dispoziția publicului',
     ],
     factualityRationale: 'Factualitate foarte ridicată, bazată pe documentare riguroasă: utilizarea surselor primare (documente, baze de date, interviuri), verificarea afirmațiilor și prezentarea dovezilor în materiale video și texte. Recorder publică periodic rapoarte către cititori despre activitatea sa.',
-    lastAnalysed: '2026-02-27',
+    lastAnalysed: '2026-11-26',
     references: [
       { label: 'Recorder – Raport anual „Opt ani de Recorder" (finanțare, structură)', url: 'https://recorder.ro/opt-ani-de-recorder-raport-in-fata-cititorilor/' },
       { label: 'Recorder – Raport anual „7 ani de Recorder"', url: 'https://recorder.ro/7-ani-de-recorder-raport-in-fata-cititorilor/' },
@@ -360,86 +362,110 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     currentOwner: 'Ringier Romania',
     parentCompany: 'Ringier AG (Elveția)',
     ownershipHistory:
-      'Fondat în 1989, imediat după Revoluție. Unul dintre primele ziare libere din România. Achiziționat ulterior de Ringier.',
+      'Fondat pe 22 decembrie 1989, imediat după Revoluție, și deținut de grupul elvețian Ringier din 1994. Între 2018 și 2023 a trecut printr-o perioadă de investigații puternice sub coordonarea lui Cătălin Tolontan; după plecarea echipei de investigații (sfârșitul lui 2023 – 2024), publicația a revenit spre un format mainstream generalist și comercial.',
     politicalConnections: ['Ringier AG — grup media elvețian fără afilieri politice românești'],
     fundingSources: ['Publicitate', 'Conținut sponsorizat', 'Abonamente'],
     editorialLine:
-      'Tabloid serios. Amestec de știri de interes general, subiecte sociale și anchete. Ton accesibil publicului larg.',
+      'Publicație mainstream generalistă care combină știri de interes general, subiecte sociale, lifestyle și anchete ocazionale, cu ton accesibil publicului larg.',
     biasRationale:
-      'Libertatea combină formatul tabloid cu jurnalism serios. Proprietarul elvețian asigură independența față de politica locală. Tendința centru-stânga se manifestă prin subiectele sociale abordate (drepturi, egalitate, anti-discriminare) mai degrabă decât prin partizanism explicit.',
-    factualityRationale: 'Factualitate mixtă — solidă pentru știri serioase, variabilă pentru conținut tabloid.',
-    lastAnalysed: '2026-02-26',
+      'euro|topics descrie Libertatea ca fiind politic independentă, găzduind opinii variate de la liberalism economic la social-democrație. După plecarea echipei de investigații (care a fondat Snoop.ro), orientarea este mai aproape de centrul mainstream (-15), păstrând o sensibilitate moderată față de subiectele sociale.',
+    factualityRationale: 'Factualitate mixtă — solidă pentru știri serioase, variabilă pentru conținut comercial/tabloid.',
+    lastAnalysed: '2026-11-26',
   },
 
   adevarul: {
     id: 'adevarul',
-    foundedYear: 1871,
-    currentOwner: 'Adevărul Holding',
+    foundedYear: 1888,
+    currentOwner: 'Adevărul Holding (Cristian Burci)',
     ownershipHistory:
-      'Unul dintre cele mai vechi ziare din România (rădăcini în 1871). Ziarul modern a reapărut în 1989. A trecut prin mai mulți proprietari, inclusiv perioade cu controverse privind conexiunile politice. Actualul proprietar este Adevărul Holding.',
+      'Unul dintre cele mai vechi ziare din România (fondat în secolul al XIX-lea, relansat în decembrie 1989). A trecut prin mai mulți proprietari (inclusiv Dinu Patriciu), fiind preluat ulterior de omul de afaceri Cristian Burci prin Adevărul Holding.',
     politicalConnections: [
-      'Istoricul unor controverse privind conexiunile politice ale proprietarilor în diverse perioade',
+      'Istoric al unor controverse privind conexiunile politice și de business ale proprietarilor în diverse perioade',
     ],
     fundingSources: ['Publicitate', 'Distribuție', 'Abonamente online'],
     editorialLine:
-      'Ziar național de referință. Acoperire largă de știri politice, sociale, economice. Tendință centru-stânga moderată.',
+      'Ziar național generalist cu flux intens de știri politice, economice, internaționale și o platformă amplă de bloguri și opinii.',
     biasRationale:
-      'Adevărul are o istorie complexă de proprietate care a influențat linia editorială de-a lungul timpului. Formatul online actual acoperă un spectru larg de subiecte. Tendința centru-stânga se manifestă prin teme preferate (anti-corupție, pro-UE, critici ale naționalismului). Credibilitatea a variat în funcție de perioadă.',
+      'euro|topics încadrează Adevărul în zona centru-dreapta / liberal-conservatoare. În fluxul zilnic de știri, abordarea este predominant generalist-mainstream, cu o ușoară înclinație liberal-conservatoare și pro-europeană (+10, centru), departe de clasificarea anterioară de centru-stânga.',
     controversies: [
-      'Controverse istorice privind conexiunile politice ale proprietarilor',
+      'Controverse istorice privind conexiunile politice ale proprietarilor și insolvența trustului',
     ],
-    lastAnalysed: '2026-02-26',
+    lastAnalysed: '2026-11-26',
   },
 
   newsweek: {
     id: 'newsweek',
-    currentOwner: 'Editor local (licență Newsweek International)',
+    foundedYear: 2018,
+    founders: ['Sabin Orcan'],
+    currentOwner: 'Newsweek România (Sabin Orcan, franciză Newsweek International)',
     ownershipHistory:
-      'Ediție românească a publicației internaționale Newsweek, operată sub licență de un editor local.',
-    fundingSources: ['Publicitate', 'Abonamente'],
+      'Ediția românească a revistei Newsweek a fost lansată în 2018 de jurnalistul Sabin Orcan, împreună cu o parte din echipa demisionară de la România Liberă, în sistem de franciză.',
+    politicalConnections: [
+      'Fără afiliere formală de partid, dar cu linie editorială constantă anti-PSD și anti-suveranistă',
+    ],
+    fundingSources: ['Publicitate', 'Abonamente', 'Evenimente'],
     editorialLine:
-      'Amestec de știri internaționale traduse și conținut local. Ton analitic.',
+      'Publicație de investigații, politică, economie și analiză, cu profil ferm pro-occidental, pro-NATO, pro-piață liberă și critic față de PSD și curentul suveranist.',
     biasRationale:
-      'Brand-ul Newsweek internațional are o orientare centru-stânga/liberală. Ediția românească urmărește această tendință, cu acoperire pro-europeană și focus pe societate civilă.',
-    lastAnalysed: '2026-02-26',
+      'Spre deosebire de percepția asupra brandului american, Newsweek România (fondat de Sabin Orcan și foști jurnaliști ai României Libere) are o linie editorială clară de centru-dreapta liberal-conservatoare (+25): pro-economie de piață, pro-parteneriat strategic cu SUA și UE, consecvent critică la adresa PSD, a populismului și a extremismului naționalist.',
+    strengths: ['Investigații privind averile și legăturile politicienilor', 'Acoperire euroatlantică'],
+    factualityRationale: 'Factualitate bună în anchete, combinată cu editoriale cu ton puternic polemic.',
+    lastAnalysed: '2026-11-26',
   },
 
   snoop: {
     id: 'snoop',
-    currentOwner: 'Independent',
-    fundingSources: ['Publicitate', 'Conținut sponsorizat'],
+    foundedYear: 2024,
+    founders: ['Cătălin Tolontan', 'Iulia Roșu', 'Răzvan Luțac', 'Mirela Neag', 'Dan Duca'],
+    currentOwner: 'Asociația Snoop (ONG de jurnalism de investigație independent)',
+    ownershipHistory:
+      'Lansat în 2024 de foști jurnaliști de investigație de la Libertatea și Gazeta Sporturilor (Cătălin Tolontan, Iulia Roșu, Răzvan Luțac, Mirela Neag ș.a.), ca redacție non-profit de interes public.',
+    politicalConnections: ['Fără afiliații politice cunoscute'],
+    fundingSources: ['Donații ale cititorilor', 'Granturi pentru jurnalism independent', 'Fără publicitate politică'],
     editorialLine:
-      'Publicație de investigație și analiză media, politică, societate.',
+      'Redacție independentă de investigații și reportaje pe teme sociale, abuzuri de putere, sănătate, educație, drepturile omului și extremism.',
     biasRationale:
-      'Publicație independentă cu orientare centru-stânga prin valorile promovate (transparență, anti-corupție, pro-UE). Fără conexiuni politice directe cunoscute.',
-    lastAnalysed: '2026-02-26',
+      'Snoop.ro practică jurnalism de investigație riguros, axat pe abuzuri sistemice, protecția categoriilor vulnerabile, sănătate publică și monitorizarea extremismului. Prin temele sociale și perspectiva civic-progresistă asumată, se situează moderat în zona centru-stânga (-25), fără partizanat de partid.',
+    strengths: ['Echipă de investigație cu experiență vastă', 'Independență editorială (model ONG)', 'Documentare riguroasă'],
+    factualityRationale: 'Factualitate ridicată, bazată pe documente oficiale, surse primare și verificare editorială.',
+    lastAnalysed: '2026-11-26',
   },
 
   spotmedia: {
     id: 'spotmedia',
     foundedYear: 2020,
-    currentOwner: 'Independent',
-    fundingSources: ['Publicitate', 'Abonamente'],
+    founders: ['Emilian Isailă', 'Nicoleta Gruia', 'Ioana Ene Dogioiu', 'Magda Grădinaru'],
+    currentOwner: 'Independent (echipa editorială)',
+    ownershipHistory:
+      'Lansat în iunie 2020 de o echipă de jurnaliști care au părăsit redacția Ziare.com în urma unor divergențe editoriale cu patronatul.',
+    fundingSources: ['Publicitate', 'Contribuții cititori'],
     editorialLine:
-      'Site de știri independent cu acoperire politică și socială. Focus pe jurnalism de calitate.',
+      'Site de știri și analize politice, economice și sociale, cu accent pe comentarii editoriale, stat de drept și orientare pro-europeană.',
     biasRationale:
-      'Publicație independentă relativ nouă, fără conexiuni politice directe documentate. Tendință centru-stânga prin alegerea subiectelor și cadrul analitic.',
-    lastAnalysed: '2026-02-26',
+      'Spotmedia are o linie pro-europeană, anti-corupție și critică față de PSD și curentul suveranist, combinând perspective liberale/pro-piață cu analize instituționale. Nu are o agendă economică de stânga; se încadrează în zona de centru (+5), cu nuanță liberal-reformistă.',
+    strengths: ['Echipă jurnalistică cu experiență', 'Analize politice și economice constante'],
+    factualityRationale: 'Factualitate bună; separă relativ clar știrile de rubricile de opinie.',
+    lastAnalysed: '2026-11-26',
   },
 
   paginademedia: {
     id: 'paginademedia',
-    currentOwner: 'Independent',
+    foundedYear: 2008,
+    founders: ['Petrișor Obae'],
+    currentOwner: 'Petrișor Obae (independent)',
+    ownershipHistory:
+      'Fondată în octombrie 2008 de jurnalistul Petrișor Obae, ca publicație specializată pe industria media, audiențe TV, publicitate și deciziile CNA.',
     editorialLine:
-      'Publicație specializată în monitorizarea presei românești. Audiențe, proprietate media, analiză industrie.',
+      'Publicație de nișă dedicată monitorizării industriei media românești: audiențe, acționariat, plecări din redacții, sancțiuni CNA și piața de publicitate.',
     biasRationale:
-      'Pagina de Media funcționează ca watchdog al industriei media. Tendința centru-stânga se manifestă prin critica față de publicațiile partizane de dreapta și promovarea independenței editoriale. Este una dintre puținele publicații care monitorizează sistematic proprietatea media.',
+      'Pagina de Media este o publicație de industrie și un watchdog tehnic al pieței media. Relatarea sancțiunilor CNA sau a tranzacțiilor din presă nu reprezintă un bias de stânga; conținutul este factual și neutru politic (0, centru).',
     strengths: [
-      'Monitorizare sistematică a industriei media',
+      'Monitorizare sistematică a industriei media și a deciziilor CNA',
       'Transparență privind proprietatea publicațiilor',
-      'Sursă valoroasă pentru analiza media',
+      'Sursă primară pentru datele de audiență din România',
     ],
-    lastAnalysed: '2026-02-26',
+    factualityRationale: 'Factualitate ridicată în raportarea datelor de audiență, a deciziilor CNA și a mișcărilor din piața media.',
+    lastAnalysed: '2026-11-26',
   },
 
   vice: {
@@ -504,53 +530,49 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     ],
   },
 
-  // ===================== STÂNGA =====================
+  // ===================== G4MEDIA & STÂNGA =====================
 
   g4media: {
     id: 'g4media',
     foundedYear: 2018,
     founders: ['Dan Tăpălagă', 'Cristian Pantazi'],
     currentOwner: 'Titluri Quality SRL (Radu Budeanu) — din august 2025',
-    parentCompany: 'Titluri Quality (include și Mediafax, Gândul, Cancan)',
+    parentCompany: 'Titluri Quality (include și Mediafax, Gândul, Cancan, ProSport, Economedia)',
     ownershipHistory:
-      'Fondat pe 18 martie 2018 de jurnaliștii Dan Tăpălagă și Cristian Pantazi, inițial ca organizație non-profit (Asociația Group 4 Media Freedom and Democracy), finanțată prin donații ale cititorilor. În august 2025, grupul G4Media a fost achiziționat integral de compania Titluri Quality, deținută de Radu Budeanu, formând cel mai mare conglomerat de presă digitală din România. Fondatorii au declarat că rămân implicați activ, iar noul proprietar a semnat un acord privind independența editorială.',
+      'Fondat pe 18 martie 2018 de jurnaliștii Dan Tăpălagă și Cristian Pantazi (foști editori HotNews), inițial ca organizație non-profit (Asociația Group 4 Media Freedom and Democracy). În august 2025, grupul G4Media (inclusiv Economedia, G4Food, Techrider) a fost achiziționat integral de Titluri Quality SRL, deținută de Radu Budeanu. Fondatorii au semnat un acord de independență editorială și au rămas la conducerea redacției.',
     politicalConnections: [
       'Fără afiliere directă la un partid politic',
-      'Finanțare din fonduri europene și USAID pentru combaterea dezinformării (~2.8M EUR)',
-      'Radu Budeanu (noul proprietar din 2025) — om de afaceri în media digitală',
+      'Proiecte finanțate prin granturi europene pentru combaterea dezinformării',
+      'Radu Budeanu (proprietar din august 2025) — om de afaceri în media digitală, patron al Gândul, Mediafax și Cancan',
     ],
     fundingSources: [
       'Publicitate',
       'Abonamente',
       'Donații cititori (perioada non-profit)',
-      'Fonduri europene / USAID (proiecte anti-dezinformare)',
+      'Granturi europene (proiecte anti-dezinformare)',
     ],
     editorialLine:
-      'Jurnalism de investigație cu focus puternic pe anti-corupție, pro-UE, pro-NATO, anti-extremism. Cea mai explicită poziționare pro-europeană și anti-naționalistă din presa românească.',
+      'Jurnalism politic, economic și de investigație cu orientare ferm pro-europeană, pro-NATO, pro-piață liberă, anti-corupție și critică față de PSD și curentul suveranist/AUR.',
     biasRationale:
-      'G4Media are o orientare editorială clar de stânga în contextul românesc: puternic anti-naționalist, anti-AUR, critic al PSD, pro-USR, pro-UE, pro-NATO. Finanțarea din fonduri europene și proiecte anti-dezinformare consolidează această orientare. Deși jurnalismul în sine este de calitate și factualitate ridicată, framing-ul editorial este explicit partizan în favoarea taberei pro-europene. Aceasta nu este o critică — G4Media este transparent cu privire la valorile sale.',
+      'G4Media nu este o publicație de stânga: economic susține piața liberă, disciplina fiscală, reducerea risipei bugetare și reforma statului, fiind consecvent critică la adresa PSD, a etatismului și a populismului, dar și a suveranismului/AUR. Platforma europeană euro|topics încadrează G4Media ca liberal-conservatoare. Combinația de liberalism economic, profil pro-occidental și apropiere de zona reformistă (PNL reformist / USR) justifică încadrarea la centru-dreapta liberal (+20), chiar la granița cu centrul.',
     notablePatterns: [
-      'Acoperire intensă a extremismului de dreapta',
-      'Poziționare clară pro-UE/NATO',
-      'Critici consistente la adresa PSD și AUR/SOS',
-      'Monitorizare dezinformare',
+      'Susținere constantă a economiei de piață și a disciplinei fiscale',
+      'Poziționare fermă pro-UE, pro-NATO și pro-stat de drept',
+      'Critici consistente la adresa PSD și a partidelor suveraniste (AUR/SOS)',
+      'Investigații și monitorizare a dezinformării',
     ],
     controversies: [
-      'Finanțare din fonduri europene/USAID — considerată controversată de critica de dreapta',
-      'Achiziția din 2025 de Titluri Quality — întrebări despre independența editorială viitoare',
+      'Achiziția din august 2025 de către Titluri Quality (Radu Budeanu) — dezbateri intense privind independența editorială pe termen lung',
+      'Criticată din zona suveranistă pentru proiectele finanțate din granturi europene',
     ],
-    strengths: ['Calitate investigativă', 'Standarde ridicate de verificare', 'Audiență mare în mediul online'],
-    factualityRationale: 'Factualitate ridicată în ciuda bias-ului editorial puternic.',
-    lastAnalysed: '2026-02-27',
+    strengths: ['Calitate investigativă și viteză de reacție', 'Standarde ridicate de verificare', 'Influență majoră în agenda publică'],
+    factualityRationale: 'Factualitate ridicată; separă editorialele asumate ale fondatorilor de fluxul de știri.',
+    lastAnalysed: '2026-11-26',
     references: [
       { label: 'G4Media – Pagina „Despre noi"', url: 'https://www.g4media.ro/despre-noi' },
+      { label: 'Eurotopics – Profil G4Media (liberal-conservative)', url: 'https://www.eurotopics.net/en/210366/g4media' },
       { label: 'Wikipedia – G4Media', url: 'https://ro.wikipedia.org/wiki/G4Media' },
-      { label: 'HotNews – Achiziția G4Media de către Titluri Quality (2025)', url: 'https://hotnews.ro/g4media-achizitionat-titluri-quality-radu-budeanu' },
-      { label: 'Adevărul – G4Media vândut către Radu Budeanu', url: 'https://adevarul.ro/economie/g4media-vandut-titluri-quality-radu-budeanu' },
-      { label: 'PressHub – Cel mai mare conglomerat digital din România', url: 'https://presshub.ro/g4media-titluri-quality-conglomerat-digital' },
-      { label: 'Revista 22 – Profil Dan Tăpălagă și G4Media', url: 'https://revista22.ro/actualitate-2/dan-tapalaga-g4media' },
-      { label: 'Capital – Achiziția G4Media și impactul în piața media', url: 'https://www.capital.ro/g4media-achizitie-titluri-quality.html' },
-      { label: 'G4Media – Finanțare și transparență', url: 'https://www.g4media.ro/dona' },
+      { label: 'Romania Journal – Achiziția G4Media de către Titluri Quality (august 2025)', url: 'https://www.romaniajournal.ro/business/radu-budeanus-titluri-quality-acquires-g4media-group/' },
     ],
   },
 
@@ -600,100 +622,138 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
 
   ziare: {
     id: 'ziare',
-    currentOwner: 'Proprietate privată',
+    currentOwner: 'New Century Holdings (NCH) / Active Soft',
+    parentCompany: 'NCH (fond de investiții american)',
+    ownershipHistory:
+      'Unul dintre cele mai vechi portaluri de știri online din România, deținut de fondul american de investiții New Century Holdings (NCH) prin Active Soft / iMedia. A trecut prin plecări masive de redacție în 2020 (o parte din echipă fondând Spotmedia.ro).',
     editorialLine:
-      'Portal de agregare de știri și publicație proprie. Conținut variat: politică, economie, entertainment.',
+      'Portal de știri generaliste și agregator cu volum mare de publicare: politică, economie, social, monden.',
     biasRationale:
-      'Ziare.com funcționează parțial ca agregator, parțial ca publicație proprie. Tendința centru-dreapta se reflectă în alegerea și framing-ul știrilor politice. Proprietatea și conexiunile politice nu sunt complet transparente.',
-    lastAnalysed: '2026-02-26',
+      'Ziare.com funcționează în principal ca portal generalist comercial și agregator, fără o afiliere partinică rigidă. Se observă o ușoară tendință pro-business și critică moderată în unele materiale politice (+10, centru).',
+    lastAnalysed: '2026-11-26',
   },
 
   gandul: {
     id: 'gandul',
-    currentOwner: 'Proprietate privată',
+    foundedYear: 2005,
+    currentOwner: 'Titluri Quality SRL (Radu Budeanu)',
+    parentCompany: 'Gândul Media Network / Titluri Quality',
+    ownershipHistory:
+      'Fondat în 2005 ca ziar național, trecut ulterior în format exclusiv online și preluat de Radu Budeanu (Titluri Quality SRL, care mai controlează Cancan, ProSport, Mediafax și, din august 2025, G4Media).',
+    politicalConnections: [
+      'Radu Budeanu — om de afaceri în media, condamnat cu suspendare într-un dosar de corupție (cazul Hidroelectrica / Elena Udrea)',
+      'Emisiuni video găzduite de formatori de opinie cu discurs puternic anti-sistem și suveranist (Marius Tucă Show, invitați precum Ion Cristoiu)',
+      'Contracte documentate de publicitate politică inclusiv cu formațiuni suveraniste (AUR)',
+    ],
+    fundingSources: ['Publicitate comercială', 'Publicitate politică', 'Proiecte video / YouTube'],
     editorialLine:
-      'Site de știri cu acoperire politică și generală.',
+      'Site de știri rapide, infotainment și talk-show-uri video cu orientare tot mai accentuată spre dreapta conservatoare, naționalistă și anti-establishment.',
     biasRationale:
-      'Gândul are o tendință centru-dreapta în acoperirea politică. Proprietatea nu este complet transparentă. Unele articole au un ton sensationalist.',
-    lastAnalysed: '2026-02-26',
+      'Sub patronajul lui Radu Budeanu, Gândul a virat semnificativ spre dreapta în perioada 2024–2026: pe lângă fluxul comercial de știri, platforma video (în special Marius Tucă Show) amplifică constant discursul suveranist, eurosceptic și anti-USR/anti-establishment. Scorul (+50, centru-dreapta spre dreapta) reflectă această reorientare.',
+    controversies: [
+      'Contracte de publicitate politică și promovare a unor figuri suveraniste',
+      'Titluri frecvent senzaționaliste și clickbait',
+    ],
+    factualityRationale: 'Factualitate mixtă — fluxul de știri curente coexistă cu titluri senzaționaliste și opinii puternic partizane.',
+    lastAnalysed: '2026-11-26',
   },
 
   capital: {
     id: 'capital',
-    currentOwner: 'Proprietate privată',
+    foundedYear: 1992,
+    currentOwner: 'Editura Evenimentul și Capital (Dan Andronic)',
+    parentCompany: 'Editura Evenimentul și Capital SRL',
+    ownershipHistory:
+      'Publicație economică lansată în 1992 (anterior parte a Ringier), editată în prezent de Editura Evenimentul și Capital, unde jurnalistul și consultantul politic Dan Andronic este acționar majoritar (~90%, alături de Evenimentul Zilei).',
+    politicalConnections: [
+      'Dan Andronic — proprietar și consultant politic cu poziționări frecvent conservatoare/de dreapta și critice față de zona progresistă/USR',
+    ],
     editorialLine:
-      'Publicație economică cu acoperire business și politică economică.',
+      'Site de știri economice, fiscale, politice și de interes general, cu volum mare de titluri comerciale și comentarii conservatoare.',
     biasRationale:
-      'Capital.ro are o orientare pro-business și pro-piață liberă specifică publicațiilor economice. Tendința centru-dreapta este naturală pentru acest profil. Factualitate mixtă — amestec de jurnalism economic serios și conținut de opinie.',
-    lastAnalysed: '2026-02-26',
+      'Capital.ro combină un profil pro-business/pro-piață cu poziționări politice conservatoare de dreapta specifice trustului condus de Dan Andronic (+35, centru-dreapta). Factualitatea este afectată de accentul pe titluri clickbait.',
+    lastAnalysed: '2026-11-26',
   },
 
   profit: {
     id: 'profit',
-    currentOwner: 'Proprietate privată independentă',
+    foundedYear: 2015,
+    founders: ['Orlando Nicoară', 'echipă de jurnaliști economici'],
+    currentOwner: 'Profit.ro / ecosistem Clever Media (Adrian Tomșa & Orlando Nicoară)',
+    ownershipHistory:
+      'Lansat în 2015 de o echipă de jurnaliști economici împreună cu managerul media Orlando Nicoară; strâns integrat comercial și editorial cu grupul Clever Media (Adrian Tomșa, Prima TV / Profit News).',
     editorialLine:
-      'Site de știri economice și de business. Focus exclusiv pe economie, finanțe, afaceri.',
+      'Site de știri economice, financiare, fiscale și de business, cu focus pe companii, piețe și reglementare.',
     biasRationale:
-      'Profit.ro este o publicație economică independentă cu standarde ridicate. Tendința centru-dreapta derivă din perspectiva pro-piață specifică jurnalismului economic serios. Nu există partizanism politic evident.',
-    strengths: ['Specialitate economică', 'Factualitate ridicată', 'Informații financiare de calitate'],
+      'Profit.ro este o publicație economică serioasă cu standarde ridicate de documentare. Orientarea centru-dreapta (+20) derivă natural din perspectiva pro-piață liberă și pro-investiții specifică presei de business, fără partizanat politic agresiv.',
+    strengths: ['Specialitate economică', 'Factualitate ridicată', 'Informații financiare și fiscale de calitate'],
     factualityRationale: 'Factualitate ridicată în domeniul economic.',
-    lastAnalysed: '2026-02-26',
+    lastAnalysed: '2026-11-26',
   },
 
   zf: {
     id: 'zf',
-    foundedYear: 1995,
-    currentOwner: 'Proprietate privată',
+    foundedYear: 1998,
+    currentOwner: 'Mediamex Investment / Mediafax Group (Dan Șucu / Adrian Sârbu)',
+    parentCompany: 'Mediafax Group / Mediamex Investment',
+    ownershipHistory:
+      'Lansat în 1998 în cadrul grupului Mediafax fondat de Adrian Sârbu. După reorganizarea datoriilor grupului, omul de afaceri Dan Șucu (fondatorul Mobexpert) a devenit principalul acționar/creditor care controlează activele Ziarului Financiar.',
     editorialLine:
-      'Cel mai important ziar economic din România. Standard ridicat în jurnalismul de afaceri, finanțe, macro-economie.',
+      'Cel mai important ziar economic din România. Standard ridicat în jurnalismul de afaceri, finanțe, bănci și macro-economie.',
     biasRationale:
-      'Ziarul Financiar este orientat centru-dreapta prin natura sa de publicație economică: pro-piață liberă, pro-business, critic al intervenționismului statal excesiv. Calitate ridicată a jurnalismului.',
+      'Ziarul Financiar este orientat centru-dreapta (+25) prin natura sa de publicație economică și prin editorialele consecvent pro-piață liberă, pro-capital privat și critice față de taxarea excesivă sau intervenționismul statal.',
     strengths: ['Standard înalt în jurnalism economic', 'Analize financiare profunde', 'Credibilitate în mediul de afaceri'],
     factualityRationale: 'Factualitate ridicată în domeniul economic.',
-    lastAnalysed: '2026-02-26',
+    lastAnalysed: '2026-11-26',
   },
 
   romanialibera: {
     id: 'romanialibera',
     foundedYear: 1877,
-    currentOwner: 'Proprietate privată (proprietar neclar)',
+    currentOwner: 'Medien Holding (familia Dan Adamescu)',
+    parentCompany: 'Medien Holding / The Nova Group Investments',
     ownershipHistory:
-      'Ziar cu tradiție îndelungată (1877). Privatizat după 1989. Proprietate controversată în unele perioade. A schimbat mai mulți proprietari.',
+      'Ziar cu tradiție îndelungată (1877). După retragerea grupului german WAZ în 2010, a trecut sub controlul integral al familiei omului de afaceri Dan Adamescu prin Medien Holding. În 2018 o parte importantă a redacției a plecat și a lansat Newsweek România.',
     editorialLine:
-      'Ziar național cu acoperire politică generală. Tendință centru-dreapta, critică la adresa stângii și a corupției.',
+      'Ziar național cu orientare conservatoare și de centru-dreapta, cu acoperire politică și opinii conservatoare.',
     biasRationale:
-      'România Liberă are o orientare centru-dreapta istorică. Factualitatea a variat semnificativ în funcție de perioadă și proprietar. Unele perioade au arătat tendințe editoriale mai marcate politic.',
+      'România Liberă are o tradiție editorială de dreapta / conservatoare (+35). Din cauza problemelor financiare și a schimbărilor de redacție din ultimul deceniu, calitatea și factualitatea au devenit variabile.',
     factualityRationale: 'Factualitate mixtă, variabilă în timp.',
-    lastAnalysed: '2026-02-26',
+    lastAnalysed: '2026-11-26',
   },
 
   observator: {
     id: 'observator',
-    currentOwner: 'Intact Media Group',
+    currentOwner: 'Intact Media Group (Camelia Voiculescu / familia Voiculescu)',
     parentCompany: 'Intact Media Group (Antena 1)',
     ownershipHistory:
-      'Observator este știrile de pe Antena 1, parte a grupului Intact. Antena 1 este televiziunea generalistă a grupului, cu audiență mai largă decât Antena 3.',
+      'Observator este redacția de știri a postului generalist Antena 1, parte a trustului Intact Media Group fondat de Dan Voiculescu și condus de fiicele sale (Camelia și Corina Voiculescu).',
     politicalConnections: [
-      'Intact Media Group — Dan Voiculescu (fondator, condamnat pentru colaborare cu Securitatea)',
-      'Mihaela Voiculescu — conducerea actuală a Intact',
+      'Intact Media Group — trust fondat de Dan Voiculescu, asociat istoric cu zona PSD / social-democrată',
     ],
-    fundingSources: ['Publicitate'],
+    fundingSources: ['Publicitate comercială'],
     editorialLine:
-      'Știrile de pe Antena 1, mai moderate decât Antena 3, dar parte din același grup media cu orientare general centru-dreapta/populistă.',
+      'Jurnal de știri de televiziune generalistă (Antena 1), axat pe actualitate socială, evenimente interne, meteo, lifestyle și știri politice prezentate într-o cheie mult mai moderată decât Antena 3.',
     biasRationale:
-      'Deși Antena 1 (Observator) este mai moderată decât Antena 3, rămâne parte a grupului Intact cu toate implicațiile acestuia. Conexiunile cu fostul fondator Dan Voiculescu și orientarea generală pro-populistă a grupului influențează editorial chiar și știrile de actualitate.',
-    factualityRationale: 'Factualitate mixtă. Mai bună decât Antena 3, dar cu influențe politice.',
-    lastAnalysed: '2026-02-26',
+      'Spre deosebire de Antena 3, Observator (Antena 1) are un format comercial generalist orientat spre subiecte sociale și audiență largă, cu implicare partinică redusă. Clasificarea anterioară de centru-dreapta (+35) era eronată; se încadrează în centrul spectrului (-5), cu o ușoară sensibilitate socială specifică grupului Intact.',
+    factualityRationale: 'Factualitate mixtă — predominant factual pe știri curente, cu accent ocazional pe emoție și senzațional social.',
+    lastAnalysed: '2026-11-26',
   },
 
   defapt: {
     id: 'defapt',
-    currentOwner: 'Independent',
+    foundedYear: 2022,
+    founders: ['Cătălin Prisacariu', 'Mircea Marian', 'Petru Zoltan'],
+    currentOwner: 'Independent (echipa fondatoare)',
+    ownershipHistory:
+      'Lansat în 2022 de jurnaliștii Cătălin Prisacariu, Mircea Marian și Petru Zoltan, foști membri ai redacțiilor Newsweek România și România Liberă.',
     editorialLine:
-      'Publicație de fact-checking și verificare a declarațiilor politice.',
+      'Site independent de știri politice, investigații și opinii incisive, cu poziționare ferm anti-PSD, anti-AUR/suveranistă și pro-occidentală.',
     biasRationale:
-      'Defapt.ro se prezintă ca publicație de fact-checking independentă. Orientarea ușor centru-dreapta poate fi subtilă prin alegerea subiectelor verificate.',
-    lastAnalysed: '2026-02-26',
+      'Defapt.ro nu este o platformă de fact-checking (cum era descris eronat anterior), ci un site de jurnalism politic și investigații al unei echipe cu profil liberal-conservator / centru-dreapta (+25), consecvent critic față de PSD, de populismul economic și de extrema dreaptă suveranistă.',
+    strengths: ['Investigații privind cheltuirea banului public', 'Independență față de marile trusturi'],
+    factualityRationale: 'Factualitate bună în investigații, combinată cu comentarii politice cu ton polemic.',
+    lastAnalysed: '2026-11-26',
   },
 
   dailybusiness: {
@@ -706,187 +766,192 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     lastAnalysed: '2026-02-26',
   },
 
-  // ===================== DREAPTA =====================
+  // ===================== PRO-PSD / SOCIAL-DEMOCRAT & DREAPTA =====================
 
   antena3: {
     id: 'antena3',
-    foundedYear: 1997,
+    foundedYear: 2005,
     founders: ['Dan Voiculescu'],
-    currentOwner: 'Intact Media Group (Jurnalul National SA)',
-    parentCompany: 'Intact Media Group',
+    currentOwner: 'Intact Media Group (Camelia Voiculescu și Corina Voiculescu)',
+    parentCompany: 'Intact Media Group (afiliat CNN din 2022 — Antena 3 CNN)',
     ownershipHistory:
-      'Fondat în 1997 de Dan Voiculescu, politician și om de afaceri condamnat definitiv în 2014 pentru colaborare cu Securitatea comunistă (a servit pedeapsa). Voiculescu a fondat Partidul Conservator (PC). Fiica sa, Mihaela Voiculescu, conduce în prezent grupul.',
+      'Lansat în iunie 2005 de Dan Voiculescu, fondatorul Partidului Conservator (fost PUR) și al trustului Intact. Voiculescu a fost condamnat definitiv în 2014 pentru spălare de bani (dosarul privatizării ICA) și a primit separat decizie definitivă CNSAS de colaborare cu Securitatea. Trustul este deținut și condus de fiicele sale, Camelia și Corina Voiculescu. Din 2022, postul funcționează ca afiliat exclusiv CNN în România (Antena 3 CNN).',
     politicalConnections: [
-      'Dan Voiculescu — condamnat pentru colaborare cu Securitatea (2014), fondator Partid Conservator',
-      'Conexiuni istorice cu PSD',
-      'Mihaela Voiculescu — conducerea actuală Intact',
-      'Poziționare sistematică anti-DNA, anti-justiție, anti-USR, pro-AUR/Georgescu',
+      'Apropiere istorică de PSD (Partidul Social Democrat) și de zona social-democrată / de guvernare',
+      'Dan Voiculescu — fondatorul trustului Intact și al Partidului Conservator',
+      'Afiliere CNN (din 2022) — linie ferm pro-NATO, pro-UE și critică față de curentul radical suveranist',
     ],
-    fundingSources: ['Publicitate', 'Posibile surse de finanțare opace (neverificabile direct)'],
+    fundingSources: ['Publicitate comercială', 'Contracte de publicitate politică', 'Distribuție cablu'],
     editorialLine:
-      'Canal de știri cu orientare puternic naționalistă și populistă. Critică vehementă a DNA, USR, Occidentului și a "statului paralel". Promovare implicită a agendei conservatoare-naționaliste.',
+      'Televiziune mainstream de știri 24/7 cu orientare social-democrată / pro-PSD pe teme economice și politice, accente conservatoare pe teme culturale, dar ferm pro-UE, pro-NATO și critică la adresa extremismului suveranist și a lui Călin Georgescu.',
     biasRationale:
-      'Antena 3 este probabil cel mai partizan canal de știri din presa mainstream românească. Conexiunile directe ale fondatorului cu Securitatea comunistă și condamnarea sa penală evidențiază natura politică a instituției. Practica sistematică de dezinformare anti-DNA, anti-Occident și amplificarea narativelor conspiraționiste justifică ratingul de dreapta extremă. CNA (Consiliul Național al Audiovizualului) a sancționat repetat Antena 3 pentru dezinformare.',
+      'Media Bias/Fact Check încadrează Antena 3 CNN la „Left-Center” (centru-stânga) cu factualitate „Mixed”. În România, postul este asociat tradițional cu PSD (stânga social-democrată: accent pe pensii, protecție socială, critică la adresa austerității de dreapta și a USR), fiind totodată pro-euroatlantic și opus curentului suveranist/AUR și candidaturii Călin Georgescu. Clasificarea anterioară de „dreapta extremă (+80)” confunda Antena 3 cu Realitatea Plus/România TV și nu corespunde realității actuale (-25, centru-stânga).',
     controversies: [
-      'Fondatorul Dan Voiculescu — condamnat pentru colaborare cu Securitatea',
-      'Multiple sancțiuni CNA pentru dezinformare',
-      'Campanie sistematică anti-DNA și anti-justiție',
-      'Retragere temporară autorizație audiovizuală (CNA, 2023)',
-      'Promovare agresivă a candidaturii Călin Georgescu (2024)',
+      'Istoric de sancțiuni CNA în perioada 2011–2022 (85 de amenzi în raportul ActiveWatch), reduse semnificativ în 2025 (2 amenzi CNA)',
+      'Campanii partizane intense împotriva adversarilor politici ai PSD și ai lui Dan Voiculescu',
+      'Ton adesea emoțional și partizan în emisiunile de dezbatere de seară',
     ],
     notablePatterns: [
-      'Dezinformare sistematică documentată',
-      'Amplificarea extremismului naționalist',
-      'Narativ pro-Georgescu/AUR în 2024',
-      'Anti-UE și anti-NATO constant',
+      'Acoperire favorabilă PSD și temelor sociale (pensii, salarii, ajutoare de stat)',
+      'Linie ferm pro-NATO și pro-UE (consolidată de parteneriatul CNN)',
+      'Opoziție clară față de Călin Georgescu și retorica anti-occidentală',
     ],
-    factualityRationale: 'Factualitate scăzută. Multiple instanțe documentate de dezinformare.',
-    lastAnalysed: '2026-02-26',
+    factualityRationale: 'Factualitate mixtă (confirmată de MBFC și de cele 2 amenzi CNA din 2025): știri curente bazate pe surse și parteneriatul CNN, combinate cu talk-show-uri partizane.',
+    lastAnalysed: '2026-11-26',
+    references: [
+      { label: 'MediaBiasFactCheck – Antena 3 CNN (Left-Center, Mixed)', url: 'https://mediabiasfactcheck.com/antena-3-cnn-bias-and-credibility/' },
+      { label: 'Paginademedia – Raport activitate CNA 2025', url: 'https://www.paginademedia.ro/cna/raport-activitate-cna-2025-top-amenzi-22395349' },
+    ],
   },
 
   romaniatv: {
     id: 'romaniatv',
+    foundedYear: 2011,
     founders: ['Sebastian Ghiță'],
-    currentOwner: 'Structură comercială controversată',
+    currentOwner: 'Ridzone Computers SRL (structură asociată lui Sebastian Ghiță)',
     ownershipHistory:
-      'Fondat de Sebastian Ghiță, om de afaceri și deputat PSD, acuzat de corupție, spălare de bani și legături cu servicii secrete. Ghiță a fugit din România în 2016 înainte de reținere, s-a predat ulterior din Serbia. Implicat și în investigațiile din dosarul Călin Georgescu (2024).',
+      'Lansat în 2011 de Sebastian Ghiță, om de afaceri și fost deputat PSD, inculpat în mai multe dosare de corupție. Ghiță a fugit din România în decembrie 2016 în Serbia, unde a primit azil și unde autoritățile sârbe au refuzat extrădarea sa.',
     politicalConnections: [
-      'Sebastian Ghiță — fugit și predat justiției române, acuzat de corupție și relații cu SRI',
-      'Conexiuni cu PSD și persoane din serviciile secrete',
-      'Poziționare anti-DNA, anti-justiție, pro-Georgescu',
+      'Sebastian Ghiță — fondator, fugar în Serbia din 2016',
+      'Apropiere fluctuantă de zona național-populistă (inclusiv AUR și figuri suveraniste), alternând cu momente de indulgență față de PSD',
+      'Poziționare constantă anti-USR, anti-DNA și critică față de instituțiile europene',
     ],
-    fundingSources: ['Publicitate', 'Surse de finanțare opace'],
+    fundingSources: ['Publicitate', 'Contracte de promovare politică', 'Surse opace'],
     editorialLine:
-      'Canal de știri cu orientare anti-instituțională, conspiraționistă și naționalistă. Critică sistematică a DNA, Occidentului, "statului profund".',
+      'Canal TV de știri cu orientare populist-naționalistă, suveranistă și senzaționalistă. Critică agresivă la adresa USR, a Occidentului și a „statului paralel”, cu promovare intensă a narativelor anti-sistem.',
     biasRationale:
-      'România TV are origini direct în politica PSD și în controversatele afaceri ale lui Sebastian Ghiță. Publicația promovează sistematic dezinformare, teorii ale conspirației și narativele anti-instituționale. Alinierea cu Călin Georgescu în 2024 și agenda anti-UE/anti-NATO fac din România TV una dintre publicațiile cu cel mai ridicat scor de bias.',
+      'Deși pornit din zona PSD, România TV a devenit unul dintre principalii vectori ai populismului național-conservator și suveranist din România (+80, dreapta), oferind vizibilitate masivă curentului AUR/Călin Georgescu și promovând frecvent burtiere alarmiste, conspirații și dezinformare (20 de amenzi CNA în 2025).',
     controversies: [
-      'Fondatorul Sebastian Ghiță — fugar și ulterior predat justiției',
-      'Dezinformare sistematică documentată',
-      'Promovare agresivă a candidaturii Georgescu (2024)',
-      'Sancțiuni CNA multiple',
+      'Fondatorul Sebastian Ghiță — fugar în Serbia din 2016',
+      '20 de amenzi CNA (300.000 lei) și 19 somații doar în 2025',
+      'Dezinformare recurentă și limbaj incendiar în talk-show-uri',
     ],
-    factualityRationale: 'Factualitate scăzută. Dezinformare frecventă.',
-    lastAnalysed: '2026-02-26',
+    factualityRationale: 'Factualitate scăzută (20 de amenzi CNA în 2025; MBFC evaluează site-ul ca Mixed cu probleme frecvente de sursare și senzaționalism).',
+    lastAnalysed: '2026-11-26',
   },
 
   dcnews: {
     id: 'dcnews',
-    founders: ['Dan Andronic'],
-    currentOwner: 'Dan Andronic',
+    foundedYear: 2010,
+    founders: ['Bogdan Chirieac', 'Răzvan Dumitrescu'],
+    currentOwner: 'Bogdan Chirieac (DCNews Media Group / Press Media Electronic SRL)',
     ownershipHistory:
-      'Fondat și condus de Dan Andronic, jurnalist și publicist cu orientare de dreapta.',
+      'Fondat în 2010 de analistul politic Bogdan Chirieac împreună cu jurnalistul Răzvan Dumitrescu. Este publicația principală a grupului DCNews Media (care include DCBusiness, DCMedical, DCNews TV). Nu are legătură cu Dan Andronic (proprietarul EVZ și Capital).',
     politicalConnections: [
-      'Dan Andronic — orientare de dreapta explicită, critici la adresa stângii și a mass-media mainstream',
+      'Bogdan Chirieac — comentator politic frecvent asociat cu zona PSD și cu establishment-ul guvernamental',
+      'Apropiere editorială constantă de PSD și critică frecventă la adresa USR și a DNA',
     ],
-    fundingSources: ['Publicitate', 'Publicitate politică (potențial)'],
+    fundingSources: ['Publicitate comercială', 'Contracte de publicitate politică și instituțională'],
     editorialLine:
-      'Site de știri cu orientare dreapta. Comentarii politice puternic partizane, critici ale stângii, USR și mass-media "mainstream".',
+      'Site de știri politice, interviuri și analize cu orientare pro-establishment și social-democrată (apropiată de PSD), cu accente conservatoare moderate și profil pro-NATO/pro-UE.',
     biasRationale:
-      'DCNews are o orientare clar de dreapta reflectată în alegerea subiectelor, framing-ul articolelor și comentariile explicite ale fondatorului. Factualitatea este afectată de tendința spre senzationalism și narativele partizane.',
-    factualityRationale: 'Factualitate scăzută spre mixtă. Bias editorial puternic.',
-    lastAnalysed: '2026-02-26',
+      'Clasificarea anterioară de dreapta (+65) se baza pe o eroare factuală privind proprietarul (confundat cu Dan Andronic). În realitate, DCNews (Bogdan Chirieac) este o publicație pro-PSD și pro-establishment, susținătoare a cheltuielilor sociale și a guvernărilor cu participare PSD, critică la adresa USR, dar mainstream pe politica externă (-20, centru-stânga social-democrat).',
+    factualityRationale: 'Factualitate mixtă — combină flux de știri de agenție și declarații cu editoriale și interviuri favorabile partidelor de guvernare.',
+    lastAnalysed: '2026-11-26',
   },
 
   flux24: {
     id: 'flux24',
-    currentOwner: 'Proprietate privată',
+    founders: ['Andrei Bădin'],
+    currentOwner: 'Andrei Bădin',
+    ownershipHistory:
+      'Platformă online fondată și coordonată de jurnalistul și realizatorul TV Andrei Bădin (fost moderator B1 TV, Antena 3 și colaborator Realitatea Plus).',
     editorialLine:
-      'Site de știri cu orientare dreapta-naționalistă.',
+      'Site de știri și comentarii cu orientare dreapta-naționalistă, conservatoare și suveranistă, critic la adresa establishment-ului pro-european.',
     biasRationale:
-      'Flux24 acoperă știri cu framing naționalist și conservator. Tendința de dreapta este vizibilă în alegerea subiectelor și tonul editorial.',
-    lastAnalysed: '2026-02-26',
+      'Flux24 promovează consecvent o agendă conservatoare, suveranistă și anti-sistem (+65, dreapta), cu titluri polemice și accent pe narativele criticii la adresa Bruxelles-ului și a partidelor pro-europene.',
+    factualityRationale: 'Factualitate mixtă — frecvent ton partizan și preluări nefiltrate din zona suveranistă.',
+    lastAnalysed: '2026-11-26',
   },
 
   activenews: {
     id: 'activenews',
     currentOwner: 'Proprietate privată',
     editorialLine:
-      'Site de știri cu orientare puternic naționalistă, conservatoare și religioasă.',
+      'Site de știri și opinii cu orientare puternic naționalistă, ultra-conservatoare, religioasă și anti-globalistă.',
     biasRationale:
-      'ActiveNews este o publicație cu orientare dreapta-extremă: promovează naționalism, ortodoxie, anti-LGBTQ, anti-UE. Conținutul include frecvent știri false sau exagerate care susțin agenda conservatoare-religioasă extremă.',
+      'ActiveNews este una dintre cele mai radicale publicații de dreapta din România (+85): promovează constant ultranaționalism, fundamentalism religios, retorică anti-UE, anti-LGBTQ și teorii ale conspirației (inclusiv dezinformare medicală și geopolitică).',
     controversies: [
-      'Promovare dezinformare sistematică',
-      'Conținut anti-LGBTQ',
-      'Narativele anti-vaccinare',
+      'Promovare sistematică de dezinformare și teorii ale conspirației',
+      'Retorică anti-UE, anti-vaccinare și anti-LGBTQ',
     ],
-    factualityRationale: 'Factualitate scăzută. Dezinformare frecventă.',
-    lastAnalysed: '2026-02-26',
+    factualityRationale: 'Factualitate scăzută. Dezinformare frecventă documentată de platforme de fact-checking.',
+    lastAnalysed: '2026-11-26',
   },
 
   epochtimes: {
     id: 'epochtimes',
-    founders: ['Epoch Times International (SUA)'],
-    currentOwner: 'Epoch Times International',
-    parentCompany: 'Epoch Times (afiliată mișcării Falun Gong)',
+    founders: ['Epoch Times International'],
+    currentOwner: 'Epoch Times România (parte a rețelei internaționale The Epoch Times)',
+    parentCompany: 'The Epoch Times (asociată istoric cu practicanți ai mișcării Falun Gong)',
     ownershipHistory:
-      'Ediție locală a publicației internaționale Epoch Times. La nivel global, Epoch Times este asociată cu mișcarea religioasă Falun Gong (persecutată în China). Publicația internațională este catalogată ca sursă de dezinformare de NewsGuard și alte organizații de media literacy.',
+      'Ediția în limba română a rețelei internaționale The Epoch Times, lansată de practicanți ai mișcării spirituale Falun Gong (persecutată de regimul comunist din China). Spre deosebire de ediția americană — care a virat puternic spre dreapta radicală MAGA — redacția din România a păstrat o linie distinctă, pro-occidentală și anti-autoritară.',
     politicalConnections: [
-      'Falun Gong — mișcare religioasă/spirituală cu centrul în SUA, anti-CCP',
-      'Orientare globală puternic pro-Trump, anti-globalist',
-      'Conexiuni documentate cu mișcarea QAnon și teorii ale conspirației globale',
+      'Opoziție declarată față de Partidul Comunist Chinez și față de influența Federației Ruse',
+      'Linie editorială în România ferm pro-UE, pro-NATO, critică față de PSD, AUR și Călin Georgescu',
     ],
     fundingSources: [
       'Rețea internațională Epoch Times',
       'Publicitate',
-      'Abonamente',
+      'Donații și abonamente',
     ],
     editorialLine:
-      'Conținut de extremă dreapta: anti-globalist, anti-comunist, anti-UE, pro-naționalist. Dezinformare și teorii ale conspirației frecvente.',
+      'Publicație online cu orientare conservator-liberală clasică, pro-occidentală, anti-corupție și puternic critică la adresa regimurilor autoritare (Rusia, China) și a suveranismului radical intern.',
     biasRationale:
-      'Epoch Times are finanțare și directivă editorială internațională. Conexiunile cu Falun Gong și cu mișcarea de extremă dreapta americană (MAGA) se reflectă direct în conținutul românesc. Publicația amplifică narativele de extremă dreapta, conspiraționiste și anti-instituționale. Studii internaționale (NewsGuard, DFRLab) au catalogat Epoch Times ca sursă sistematică de dezinformare.',
+      'Clasificarea anterioară (+90, extremă dreapta) copia profilul ediției americane (MAGA/QAnon), ignorând conținutul real al Epoch Times România. Ediția românească este ferm pro-UE, pro-NATO, critică dură a lui Călin Georgescu, AUR și a propagandei ruse, promovând drepturile omului și statul de drept dintr-o perspectivă conservator-liberală (+30, centru-dreapta).',
     controversies: [
-      'Catalogat ca sursă de dezinformare de NewsGuard',
-      'Propagandă pentru mișcarea QAnon la nivel global',
-      'Finanțare opacă prin rețeaua internațională',
-      'Conținut anti-vaccinare documentat',
+      'Asocierea de brand cu ediția americană The Epoch Times, criticată internațional pentru dezinformare și partizanat pro-Trump',
+      'Finanțare și structură de grup internațională asociată mișcării Falun Gong',
     ],
-    factualityRationale: 'Factualitate scăzută. Dezinformare sistematică documentată internațional.',
-    lastAnalysed: '2026-02-26',
+    factualityRationale: 'Factualitate mixtă: în România publică frecvent interviuri și analize serioase de geopolitică și justiție, dar poartă riscul editorial al rețelei-mamă internaționale.',
+    lastAnalysed: '2026-11-26',
   },
 
   // ===================== SATIRĂ =====================
 
   catavencii: {
     id: 'catavencii',
-    foundedYear: 1991,
-    founders: ['Ion Iuga', 'Mircea Cărtărescu', 'Cătălin Mihuleac', 'alți jurnaliști și scriitori'],
-    currentOwner: 'Proprietate privată',
+    foundedYear: 2011,
+    founders: ['Doru Bușcu', 'Mircea Dinescu', 'Patrick André de Hillerin', 'foști redactori Academia Cațavencu'],
+    currentOwner: 'Patetic Media (Doru Bușcu, Mircea Dinescu ș.a.)',
     ownershipHistory:
-      'Revistă de satiră politică fondată în 1991. Una dintre cele mai longevive publicații satirice din România post-comunistă.',
+      'Săptămânal de satiră politică lansat în 2011 de nucleul redacțional desprins din Academia Cațavencu (condus de Doru Bușcu și Mircea Dinescu). A funcționat inițial sub umbrela Adevărul Holding, devenind ulterior independent.',
     editorialLine:
-      'Satiră politică și socială. Critică politicieni de toate culorile, cu tendință anti-corupție transpartinică.',
+      'Satiră politică, anchete și comentarii ironice care vizează politicieni și instituții din toate zonele spectrului.',
     biasRationale:
-      'Publicație de satiră — "factualitatea" trebuie interpretată altfel. Satira lovește în toate direcțiile, dar critica stării democrației și a corupției are o nuanță ușor centru-stânga în contextul românesc.',
-    strengths: ['Calitate literară', 'Independență editorială', 'Tradiție îndelungată'],
-    lastAnalysed: '2026-02-26',
+      'Publicație de satiră care lovește transpartinic în clasa politică (PSD, PNL, USR, suveraniști). Nu se aliniază unei singure ideologii economice sau politice (0, centru).',
+    strengths: ['Calitate literară', 'Satiră transpartinică', 'Tradiție în presa satirică'],
+    lastAnalysed: '2026-11-26',
   },
 
   academiacatavencu: {
     id: 'academiacatavencu',
-    foundedYear: 1990,
-    founders: ['Ion Iuga', 'Ioana Bâldea Constantinescu', 'alții'],
-    currentOwner: 'Proprietate privată',
+    foundedYear: 1991,
+    founders: ['Mircea Toma', 'Liviu Mihaiu', 'Ioan T. Morar', 'Doru Bușcu', 'echipa Cațavencu'],
+    currentOwner: 'Medien Holding (familia Dan Adamescu)',
     ownershipHistory:
-      'Una dintre primele publicații satirice post-comuniste. Precursor sau legat editorial de Cațavencii.',
+      'Una dintre cele mai cunoscute reviste satirice post-decembriste, fondată în 1991. După intrarea în insolvență a vechii societăți în 2011, brandul a fost cumpărat la licitație de Medien Holding (Dan Adamescu), iar vechea redacție a fondat revista Cațavencii.',
     editorialLine:
-      'Satiră politică clasică. Critică transpartinică a politicienilor și a clasei dirigente.',
+      'Satiră politică și pamflet la adresa clasei politice românești.',
     biasRationale:
-      'Similar cu Cațavencii — satiră care lovește transpartisan. Calitate literară ridicată. Bias politic minim.',
-    lastAnalysed: '2026-02-26',
+      'Satiră transpartinică fără o agendă ideologică unică (0, centru), cu activitate mult mai redusă față de perioada de vârf a anilor 1990–2000.',
+    lastAnalysed: '2026-11-26',
   },
 
   // ===================== TABLOID & GENERAL =====================
 
   wowbiz: {
     id: 'wowbiz',
-    currentOwner: 'Proprietate privată',
+    currentOwner: 'Dogan Media International (Kanal D)',
+    parentCompany: 'Dogan Holding (Turcia)',
+    ownershipHistory:
+      'Portal de știri mondene și divertisment operat sub umbrela trustului Kanal D (Dogan Media International).',
     editorialLine:
-      'Tabloid de entertainment și celebrities. Conținut de divertisment, vedete, scandal.',
+      'Tabloid de entertainment, vedete, lifestyle și subiecte virale.',
     biasRationale:
-      'Tabloid cu focus pe entertainment. Bias politic minimal — conținutul este preponderent apolitical. Factualitate mixtă specifică tabloide.',
-    factualityRationale: 'Factualitate mixtă — tabloid entertainment.',
-    lastAnalysed: '2026-02-26',
+      'Tabloid axat pe divertisment și mondenități, cu bias politic minimal (0, centru). Factualitate mixtă specifică tabloidelor.',
+    factualityRationale: 'Factualitate mixtă — tabloid de divertisment.',
+    lastAnalysed: '2026-11-26',
   },
 
   actualitate: {
@@ -901,25 +966,31 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
 
   factual: {
     id: 'factual',
-    currentOwner: 'Independent / structură ONG',
+    currentOwner: 'Asociația Funky Citizens (proiect independent de fact-checking)',
     editorialLine:
-      'Platformă de fact-checking. Verificarea informațiilor false din spațiul public.',
+      'Platformă de fact-checking dedicată verificării declarațiilor publice ale politicienilor din toate partidele.',
     biasRationale:
-      'Factual.ro încearcă să funcționeze transpartisan. Tendința ușor centristă reflectă că verificarea faptelor ca practică are o ușoară orientare pro-adevăr/anti-dezinformare, ceea ce în peisajul românesc este uneori perceput ca anti-dreapta extremă (deoarece dezinformarea vine preponderent din această zonă).',
+      'Factual.ro aplică o metodologie transparentă de verificare a declarațiilor politicienilor din tot spectrul (PSD, PNL, USR, AUR). Verificarea faptelor este o practică neutră politic (0, centru).',
     strengths: ['Verificarea informațiilor', 'Metodologie transparentă', 'Independență'],
-    factualityRationale: 'Factualitate foarte ridicată prin definiție.',
-    lastAnalysed: '2026-02-26',
+    factualityRationale: 'Factualitate foarte ridicată prin definiție și metodologie verificabilă.',
+    lastAnalysed: '2026-11-26',
   },
 
   jurnalul: {
     id: 'jurnalul',
-    foundedYear: 1990,
-    currentOwner: 'Proprietate privată',
+    foundedYear: 1993,
+    currentOwner: 'Intact Media Group (Camelia și Corina Voiculescu)',
+    parentCompany: 'Intact Media Group',
+    ownershipHistory:
+      'Lansat în 1993 ca Jurnalul Național, parte istorică a trustului Intact Media Group fondat de Dan Voiculescu.',
+    politicalConnections: [
+      'Intact Media Group — trust asociat istoric cu zona PSD și social-democrată',
+    ],
     editorialLine:
-      'Ziar național de știri generale. Acoperire politică și socială.',
+      'Cotidian național cu acoperire politică, socială și de actualitate, aliniat în linii mari sensibilității editoriale a trustului Intact.',
     biasRationale:
-      'Jurnalul are o orientare generală centristă cu ușoară tendință conservatoare în anumite perioade. Proprietatea și conexiunile politice nu sunt complet transparente.',
-    lastAnalysed: '2026-02-26',
+      'Ca publicație a trustului Intact Media Group, Jurnalul.ro reflectă frecvent o linie apropiată de PSD și de temele sociale/de guvernare, combinată cu accente tradiționaliste moderate (-20, centru-stânga social-democrat).',
+    lastAnalysed: '2026-11-26',
   },
 
   realitatea: {
@@ -929,32 +1000,30 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     currentOwner: 'Maricel Păcuraru (prin fiica sa, Bertalan Alexandra Beatrice — 99,75% din Geopol International SRL)',
     parentCompany: 'Geopol International SRL',
     ownershipHistory:
-      'Fondat în 2001 ca Realitatea TV de Sorin Ovidiu Vântu, condamnat penal pentru fraudă. Postul a intrat în insolvență (2011) și faliment (2019). Licența a fost retrasă pe 31 octombrie 2019. A fost înlocuit de Realitatea Plus, care a început emisiunea pe 1 noiembrie 2019. Până în 2021, Geopol International (operatorul licenței) era deținut de Strategies Research (acționari: Maricel Păcuraru și Cozmin Gușă). Din 2021, Cozmin Gușă nu mai figurează printre acționari, iar Bertalan Alexandra Beatrice (fiica lui Maricel Păcuraru) deține 99,75% din Geopol International.',
+      'Fondat în 2001 ca Realitatea TV de Sorin Ovidiu Vântu. Postul a intrat în insolvență (2011) și faliment (2019), fiind continuat de Realitatea Plus din 1 noiembrie 2019 (licența Geopol International SRL). Din 2021, Bertalan Alexandra Beatrice (fiica lui Maricel Păcuraru) deține 99,75% din Geopol International.',
     politicalConnections: [
-      'Sorin Ovidiu Vântu — fondatorul original, condamnat penal, conexiuni politice multiple',
-      'Maricel Păcuraru — om de afaceri, controlează postul prin fiica sa',
-      'Cozmin Gușă — fost acționar (până în 2021), analist politic, fost consilier al lui Traian Băsescu',
-      'Poziționare anti-USR, critică la adresa UE în anumite contexte',
+      'Maricel Păcuraru — om de afaceri, controlează postul prin familia sa',
+      'Contracte documentate de promovare politică cu AUR și aliniere editorială puternică cu curentul suveranist și cu Călin Georgescu',
+      'Poziționare vehement anti-USR, anti-UE (Bruxelles) și anti-establishment pro-occidental',
     ],
-    fundingSources: ['Publicitate', 'Cablu/satelit'],
+    fundingSources: ['Publicitate comercială', 'Publicitate politică (inclusiv AUR)', 'Cablu/satelit'],
     editorialLine:
-      'Canal de știri cu orientare conservatoare-naționalistă. Accent pe suveranitate națională, critică la adresa globalizării și a „corectitudinii politice". Talk-show-uri cu opinii puternice.',
+      'Canal TV de știri cu orientare puternic suveranistă, ultranaționalistă și anti-sistem. Principala platformă TV a discursului pro-Călin Georgescu și pro-AUR în perioada 2024–2026.',
     biasRationale:
-      'Realitatea Plus (fost Realitatea TV) a oscilat semnificativ de-a lungul timpului în funcție de proprietar. Sub controlul lui Maricel Păcuraru, orientarea s-a cristalizat spre dreapta conservatoare-naționalistă. Talk-show-urile promovează frecvent narativele suveraniste și conservatoare. Nu atinge nivelul de dezinformare al Antena 3 sau România TV, dar are un bias editorial clar spre dreapta.',
+      'Sub controlul familiei Păcuraru și prin emisiuni precum „Culisele Statului Paralel”, Realitatea Plus a devenit cel mai radical canal TV suveranist-naționalist din România (+85, dreapta). Este totodată televiziunea cea mai sancționată de CNA în 2025 (29 de amenzi în valoare de 1,15 milioane lei și 31 de somații), din cauza dezinformării recurente și a lipsei de echilibru.',
     controversies: [
-      'Fondatorul original Sorin Ovidiu Vântu — condamnat penal',
-      'Dificultăți financiare recurente, insolvență și faliment',
-      'Schimbări multiple de proprietar și structuri corporative opace',
-      'Acuzații de partinitate politică în diverse perioade',
+      '29 de amenzi CNA (1.150.000 lei) și 31 de somații doar în 2025 — locul 1 în România',
+      'Promovare intensă și dezechilibrată a lui Călin Georgescu și a agendei AUR',
+      'Contracte politice și insolvență/faliment istoric ale vechii structuri Realitatea TV',
     ],
     notablePatterns: [
-      'Talk-show-uri cu orientare conservatoare',
-      'Accent pe suveranitate națională',
-      'Critică selectivă a politicienilor din tabăra pro-europeană',
+      'Talk-show-uri militant suveraniste și conspiraționiste',
+      'Critică virulentă la adresa UE, a justiției și a partidelor pro-europene',
+      'Sancțiuni CNA repetate pentru dezinformare și încălcarea imparțialității',
     ],
-    strengths: ['Acoperire în timp real', 'Dezbateri politice'],
-    factualityRationale: 'Factualitate mixtă — afectată de bias editorial în talk-show-uri, mai bună în știrile de actualitate.',
-    lastAnalysed: '2026-02-27',
+    strengths: ['Acoperire live extinsă'],
+    factualityRationale: 'Factualitate scăzută (29 de amenzi CNA în 2025; evaluat Mixed de MBFC pentru site-ul realitatea.net).',
+    lastAnalysed: '2026-11-26',
   },
 
   b1tv: {
@@ -964,47 +1033,45 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     currentOwner: 'Sorin Oancea (50%), George Constantin Păunescu (40%), Luminița Elena Oancea (10%)',
     parentCompany: 'B1 TV Channel SRL',
     ownershipHistory:
-      'Lansat în 2001 ca post generalist, transformat în canal de știri 24/7 în 2011. Acționariatul a fost împărțit între Sorin Oancea și George Constantin Păunescu (50/50). În februarie 2025, CNA a aprobat o nouă structură: Oancea 50%, Păunescu 40%, Luminița Elena Oancea (soția lui Sorin Oancea) 10%. Un conflict între familia Păunescu și Oancea pentru controlul postului este documentat din august 2022.',
+      'Lansat în 2001 ca post generalist, transformat în canal de știri 24/7 în 2011. În februarie 2025, CNA a aprobat noua structură de acționariat: Sorin Oancea 50%, George Constantin Păunescu 40%, Luminița Elena Oancea 10%, pe fondul unui conflict de durată între familiile Păunescu și Oancea.',
     politicalConnections: [
-      'George Constantin Păunescu — fiul lui Viorel Păunescu, controversat om de afaceri',
-      'Bobby Păunescu — fondatorul, producător de film și om de afaceri cu conexiuni politice',
-      'Sorin Oancea — director editorial cu influență asupra liniei postului',
+      'Istoric apropiat de zona de centru-dreapta democratică (PNL / USR / pro-occidentală)',
+      'Tensiuni interne în 2025–2026 privind direcția editorială și presiunile financiare ale pieței TV',
     ],
     fundingSources: ['Publicitate', 'Cablu/satelit'],
     editorialLine:
-      'Canal de știri cu orientare centru-dreapta. Istoric, B1 TV a fost considerat unul dintre puținele posturi cu acoperire echilibrată pro-europeană. În ianuarie 2025, înlocuirea prezentatorului Tudor Mușat cu Laura Chiriac (fostă colaboratoare la Antena 3 și România TV) a generat speculații privind o posibilă viraj spre dreapta suveranistă.',
+      'Canal de știri cu orientare centru-dreapta liberală și pro-europeană, cu dezbateri politice și critici frecvente la adresa PSD și a curentului suveranist.',
     biasRationale:
-      'B1 TV a fost tradițional un post centru-dreapta moderat, oferind spațiu opoziției democratice și perspectivei pro-europene. Conflictul intern de proprietate și schimbările editoriale din 2025 sugerează o posibilă reorientare spre dreapta. Clasificarea actuală reflectă starea curentă, dar necesită monitorizare.',
+      'B1 TV rămâne structural un post de centru-dreapta pro-occidental (+25), mult mai apropiat de electoratul liberal/PNL/USR decât de retorica suveranistă a României TV sau Realitatea Plus, în ciuda tensiunilor editoriale și financiare din 2025–2026.',
     controversies: [
       'Conflict de proprietate între familia Păunescu și Sorin Oancea (din 2022)',
-      'Înlocuirea prezentatorului Tudor Mușat (ianuarie 2025) — speculații de reorientare editorială',
-      'Laura Chiriac — prezentator nou cu istoric la posturi pro-PSD/suveraniste',
+      'Plecări de moderatori și dezbateri privind încercări de repoziționare editorială (2025)',
     ],
     notablePatterns: [
-      'Dezbateri cu perspective multiple',
-      'Acoperire a opoziției democratice',
-      'Posibilă reorientare editorială în curs (2025)',
+      'Dezbateri cu invitați din zona PNL/USR și analiști pro-europeni',
+      'Critică constantă a PSD și a populismului',
     ],
-    strengths: ['Acoperire 24/7', 'Istoric de echilibru editorial relativ', 'Dezbateri politice'],
-    factualityRationale: 'Factualitate mixtă — solidă în știrile de actualitate, variabilă în talk-show-uri.',
-    lastAnalysed: '2026-02-27',
+    strengths: ['Acoperire 24/7', 'Zero amenzi CNA în 2025 (5 somații)', 'Dezbateri politice'],
+    factualityRationale: 'Factualitate mixtă — solidă în știrile curente, cu ton polemic în talk-show-uri.',
+    lastAnalysed: '2026-11-26',
   },
 
   aktual24: {
     id: 'aktual24',
-    currentOwner: 'Independent (Ioan Ovidiu)',
-    ownershipHistory: 'Publicație independentă activă în online, fondată de Ioan Ovidiu.',
-    editorialLine: 'Site de știri cu focus pe politică, investigații și actualitate internă. Ton adesea anti-corupție și critic la adresa marilor partide.',
-    biasRationale: 'Aktual24 are o orientare anti-corupție și critică la adresa sistemului politic tradițional (în special PSD/PNL). Tendința este ușor centru-dreapta / reformistă.',
-    lastAnalysed: '2026-03-19',
+    founders: ['Ovidiu Albu'],
+    currentOwner: 'Independent (Ovidiu Albu)',
+    ownershipHistory: 'Site independent de știri și comentarii politice fondat și condus de jurnalistul Ovidiu Albu.',
+    editorialLine: 'Site de știri cu focus pe politică internă, justiție și actualitate, cu poziționare ferm anti-PSD, anti-AUR/suveranistă și pro-UE/pro-USR.',
+    biasRationale: 'Aktual24 are o linie clară anti-PSD, anti-suveranistă și pro-reformistă/liberală, similară zonei USR și centrului-dreapta urban (+20, centru-dreapta). Tonul titlurilor este frecvent polemic și militant.',
+    lastAnalysed: '2026-11-26',
   },
 
   redactia: {
     id: 'redactia',
     currentOwner: 'Proprietate privată',
-    ownershipHistory: 'Site de știri online generalist, cu focus pe actualitate și click de tip agregator.',
+    ownershipHistory: 'Site de știri online generalist, cu focus pe actualitate și trafic de tip agregator.',
     editorialLine: 'Știri generale, tabloid și actualitate rapidă. Focus pe trafic și audiență social media.',
-    biasRationale: 'Conținut generalist / agregator fără o linie editorială politică asumată. Factualitatea poate varia în funcție de preluări.',
+    biasRationale: 'Conținut generalist / agregator fără o linie editorială politică asumată (0, centru). Factualitatea variază în funcție de preluări.',
     lastAnalysed: '2026-03-19',
   },
 
@@ -1013,29 +1080,29 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     foundedYear: 1991,
     founders: ['Ion Rațiu'],
     currentOwner: 'Cornel Nistorescu',
-    ownershipHistory: 'Fondat în 1991 de Ion Rațiu cu orientare asumată de dreapta / țărănistă. După moartea sa a trecut prin mai multe patronate. În prezent este controlat de jurnalistul Cornel Nistorescu.',
-    editorialLine: 'Publicație zilnică online de știri, analize și editoriale. Ton puternic dictat de opiniile lui Cornel Nistorescu.',
-    biasRationale: 'Sub conducerea actuală, ziarul a adoptat o linie editorială frecvent critică la adresa decidenților pro-europeni, DNA, USR și pro-abordări suveraniste sau naționaliste. Are o tendință clară spre dreapta-suveranistă.',
-    lastAnalysed: '2026-03-19',
+    ownershipHistory: 'Fondat în 1991 de Ion Rațiu cu orientare țărănistă/de dreapta. După moartea sa a trecut prin mai multe patronate, fiind condus în prezent de jurnalistul Cornel Nistorescu.',
+    editorialLine: 'Publicație zilnică online de știri, analize și editoriale, cu ton puternic dictat de pozițiile lui Cornel Nistorescu.',
+    biasRationale: 'Sub conducerea actuală, Cotidianul promovează frecvent editoriale conservatoare, anti-USR, anti-DNA și simpatice față de critica suveranistă a instituțiilor europene (+50, centru-dreapta spre dreapta).',
+    lastAnalysed: '2026-11-26',
   },
 
   comisarul: {
     id: 'comisarul',
     currentOwner: 'Proprietate privată',
-    ownershipHistory: 'Site online de știri, comentarii și sinteze, deseori cu un ton senzaționalist.',
-    editorialLine: 'Abordare agresivă de tip tabloid politic, limbaj colorat și orientare puternic marcată anti-sistem.',
-    biasRationale: 'Site-ul prezintă un jurnalism militant, partizan, cu un limbaj deseori injurios și neprofesionist. Tendința este populistă-dreapta.',
-    lastAnalysed: '2026-03-19',
+    ownershipHistory: 'Site online de știri, preluări și comentarii politice cu ton senzaționalist și anti-sistem.',
+    editorialLine: 'Abordare agresivă de tip tabloid politic, limbaj colorat și critică dură la adresa clasei politice (PSD, PNL, USR, în funcție de conjunctură).',
+    biasRationale: 'Site-ul practică un jurnalism militant și senzaționalist, cu accente populiste și conservator-naționaliste (+35, centru-dreapta), dar fără o disciplină ideologică unitară.',
+    lastAnalysed: '2026-11-26',
   },
 
   metropolatv: {
     id: 'metropolatv',
     foundedYear: 2020,
     currentOwner: 'Consiliul Local Voluntari (Florentin Pandele)',
-    ownershipHistory: 'Canal TV lansat de televiziunea Consiliului Local Voluntari, primărie condusă de Florentin Pandele (soțul Gabrielei Firea, lider PSD).',
-    editorialLine: 'Canal de știri, divertisment și talk-show-uri politice. Găzduiește emisiuni ale unor realizatori controversați.',
-    biasRationale: 'Finanțarea publică din Voluntari subordonată lui Florentin Pandele implică legături directe cu PSD, dar și cu zona de conservatorism asumată de grupul condus de familia Pandele/Firea.',
-    lastAnalysed: '2026-03-19',
+    ownershipHistory: 'Canal TV lansat în 2020 de televiziunea Consiliului Local Voluntari (primar Florentin Pandele, soțul liderului PSD Gabriela Firea).',
+    editorialLine: 'Canal de știri, divertisment și talk-show-uri politice care combină finanțarea publică locală cu emisiuni ale unor realizatori conservatori/suveraniști.',
+    biasRationale: 'Metropola TV prezintă un profil hibrid: finanțare controlată de primăria lui Florentin Pandele (legături cu PSD) combinată cu talk-show-uri de orientare conservator-populistă și anti-USR (+45, centru-dreapta).',
+    lastAnalysed: '2026-11-26',
   },
 
   romaniajournal: {
@@ -1057,17 +1124,17 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     biasRationale: 'Fiind dedicată mediului corporate expat și antreprenorilor străini, abordează piața cu un ton economic pro-occidental, centrist, foarte echilibrat politic.',
     lastAnalysed: '2026-03-19',
   },
-  economedia: { id: 'economedia', currentOwner: 'Independent (G4Media network affiliate)', editorialLine: 'Știri și analize economice, business și politică macroeconomică.', biasRationale: 'Abordare centristă, pro-business și pro-reformă europeană. Jurnalism factual axat pe economie, cu standarde editoriale înalte.', lastAnalysed: '2026-03-21', factualityRationale: 'Jurnalism solid axat pe date și fapte.' },
+  economedia: { id: 'economedia', currentOwner: 'Titluri Quality SRL (Radu Budeanu) — din august 2025 (grupul G4Media)', parentCompany: 'Titluri Quality', editorialLine: 'Știri și analize economice, business, fiscalitate și politică macroeconomică, parte din grupul fondat de echipa G4Media.', biasRationale: 'Abordare economică factuală, pro-piață liberă, pro-mediu privat și pro-reformă europeană (+15, centru cu ușoară înclinație liberal-economică). Preluată în august 2025 de Titluri Quality sub același acord de independență editorială ca G4Media.', lastAnalysed: '2026-11-26', factualityRationale: 'Jurnalism solid axat pe date, statistici oficiale și fapte.' },
   cursdeguvernare: { id: 'cursdeguvernare', currentOwner: 'Curs De Guvernare SRL', editorialLine: 'Analize aprofundate de politici publice, macroeconomie și strategie națională.', biasRationale: 'Publicație centristă specializată, care echilibrează analizele stânga-dreapta printr-o raportare riguroasă și orientată tehnic spre politici publice europene.', lastAnalysed: '2026-03-21', factualityRationale: 'Specializată în analize ample și documentate.' },
-  edupedu: { id: 'edupedu', currentOwner: 'Independent', editorialLine: 'Publicație strict dedicată politicilor educaționale, învățământului și cercetării.', biasRationale: 'Factualitate foarte mare. Tonul este pro-reformă, pro-transparență în educație, având o ușoară tendință progresist-europeană, însă fără bias politic frontal.', lastAnalysed: '2026-03-21', factualityRationale: 'Singura sursă de referință independentă pentru sistemul educațional RO.' },
+  edupedu: { id: 'edupedu', foundedYear: 2018, founders: ['Raluca Pantazi', 'Mihai Peticilă', 'Mădălina Belu'], currentOwner: 'Independent (echipa fondatoare)', editorialLine: 'Publicație dedicată politicilor educaționale, învățământului și cercetării.', biasRationale: 'Factualitate foarte mare. Tonul este pro-reformă și pro-transparență în educație, cu o ușoară sensibilitate civică (-10, centru), fără partizanat politic.', lastAnalysed: '2026-11-26', factualityRationale: 'Sursă de referință independentă pentru sistemul educațional din România.' },
   rfi: { id: 'rfi', currentOwner: 'France Médias Monde', parentCompany: 'Guvernul Francez', editorialLine: 'Jurnalism radio low-bias, axat pe evenimente franțuzești, internaționale și românești majore.', biasRationale: 'Parte a rețelei Radio France Internationale. Menține o obiectivitate inaltă, promovând democrația, drepturile omului și valorile europene (centru).', lastAnalysed: '2026-03-21', factualityRationale: 'Standarde riguroase impuse de grupul public francez.' },
   alephnews: { id: 'alephnews', founders: ['Adrian Sârbu'], currentOwner: 'Aleph Media (Adrian Sârbu)', editorialLine: 'Canal TV de știri cu un format neconvențional "social television".', biasRationale: 'Linie editorială asumată drept smart-news. Poate manifesta uneori tușe personale legate de opiniile fondatorului Adrian Sârbu pe zona de business și economie, rămânând totuși global centristă.', lastAnalysed: '2026-03-21', factualityRationale: 'Focus pe visual și sinteză, ocazional infotainment.' },
-  fanatik: { id: 'fanatik', currentOwner: 'Horia Ivanovici', editorialLine: 'Site hibrid de sport, cancan, lifestyle și știri politice/sociale generaliste.', biasRationale: 'Format tabloid cu titluri clickbait. Linia pe politică tinde uneori spre centru-dreapta senzaționalist. Se bazează masiv pe rating și emoție.', lastAnalysed: '2026-03-21', factualityRationale: 'Publicație de tip tabloid; factualitatea variază masiv între segmente.' },
-  cancan: { id: 'cancan', currentOwner: 'Titluri Quality (Radu Budeanu)', editorialLine: 'Tabloid extrem orientat spre showbiz, scandaluri, mondenități și politic-tabloid.', biasRationale: 'Orientare puternic comercială și de senzație. Când atinge subiecte politice, tinde spre narațiuni populiste de dreapta sau favorizează figuri controversate.', lastAnalysed: '2026-03-21', factualityRationale: 'Factualitate scăzută pe teme serioase, prioritatea fiind clickurile.' },
+  fanatik: { id: 'fanatik', currentOwner: 'Horia Ivanovici', editorialLine: 'Site hibrid de sport, cancan, lifestyle și știri politice/sociale generaliste.', biasRationale: 'Format tabloid cu titluri clickbait. Linia pe politică tinde uneori spre senzaționalism și populism moderat (+15, centru). Se bazează masiv pe trafic și emoție.', lastAnalysed: '2026-11-26', factualityRationale: 'Publicație de tip tabloid; factualitatea variază masiv între segmente.' },
+  cancan: { id: 'cancan', currentOwner: 'Titluri Quality SRL (Radu Budeanu)', parentCompany: 'Titluri Quality', editorialLine: 'Tabloid orientat preponderent spre showbiz, scandaluri, mondenități și subiecte virale.', biasRationale: 'Publicație comercială de divertisment și scandal; conținutul politic este secundar și ocazional populist (+15, centru). Nu are o linie ideologică politică structurată.', lastAnalysed: '2026-11-26', factualityRationale: 'Factualitate scăzută pe teme serioase, prioritatea fiind traficul și mondenitățile.' },
   psnews: { id: 'psnews', currentOwner: 'Independent/Privat', editorialLine: 'Știri politice românești scurte, breaking news-uri rapide.', biasRationale: 'A avut istoric perioade în care a fost criticată pentru afilieri netransparente cu zona de dreapta/centru-dreapta a politicii românești (în special PNL).', lastAnalysed: '2026-03-21', factualityRationale: 'Mix de știri factuale de agenție și conținut partizan.' },
-  zdg: { id: 'zdg', currentOwner: 'Asociația Ziarul de Gardă', editorialLine: 'Publicație de investigații din Republica Moldova, axată pe tăierea corupției și oligarhiei.', biasRationale: 'Campioane ale jurnalismului anti-corupție și pro-european de la Chișinău. Acuratețe și impact enorm în deconspirarea fenomenelor ilegale.', lastAnalysed: '2026-03-21', factualityRationale: 'Jurnalism de investigație la cele mai înalte standarde internaționale (premiat constant).' },
-  riseproject: { id: 'riseproject', founders: ['Paul Radu', 'Mihai Munteanu'], currentOwner: 'Asociația RISE Project', editorialLine: 'Dedicat exclusiv jurnalismului de investigație pe format cross-border (în parteneriat cu OCCRP).', biasRationale: 'Nu are filiații politice. Urmărește crima organizată și corupția la nivel înalt. Valorile anti-corupție și pro-transparență îi oferă un profil progresist (centru-stânga ușor).', lastAnalysed: '2026-03-21', factualityRationale: 'Sursă primară absolută pentru investigații documentate minuțios din registre oficiale.' },
-  buletindebucuresti: { id: 'buletindebucuresti', currentOwner: 'Asociația Funky Citizens', editorialLine: 'Publicație bazată pe jurnalism comunitar, investigații și administrație locală în București + Ilfov.', biasRationale: 'Susținută de Funky Citizens, promovează anticorupția, transparența administrativă și libertățile civice (valori specifice centrului și centrului-stânga).', lastAnalysed: '2026-03-21', factualityRationale: 'Nivel ridicat de dovedire a faptelor prin hotărâri CGMB și documente de achiziții publice.' },
+  zdg: { id: 'zdg', currentOwner: 'Asociația Ziarul de Gardă', editorialLine: 'Publicație de investigații din Republica Moldova, axată pe corupție, oligarhie și stat de drept.', biasRationale: 'Publicație independentă anti-corupție și pro-europeană de la Chișinău. Investigațiile de interes public și monitorizarea corupției sunt transpartinice (-15, centru cu ușoară înclinație civică).', lastAnalysed: '2026-11-26', factualityRationale: 'Jurnalism de investigație la standarde internaționale, premiat constant.' },
+  riseproject: { id: 'riseproject', founders: ['Paul Radu', 'Mihai Munteanu'], currentOwner: 'Asociația RISE Project', editorialLine: 'Dedicat exclusiv jurnalismului de investigație pe format cross-border (în parteneriat cu OCCRP).', biasRationale: 'Nu are filiații politice. Urmărește crima organizată și corupția la nivel înalt. Valorile anti-corupție și pro-transparență o plasează în zona de centru cu ușoară înclinație civică (-15).', lastAnalysed: '2026-11-26', factualityRationale: 'Sursă primară pentru investigații documentate minuțios din registre oficiale.' },
+  buletindebucuresti: { id: 'buletindebucuresti', currentOwner: 'Asociația Funky Citizens', editorialLine: 'Publicație bazată pe jurnalism comunitar, investigații și administrație locală în București + Ilfov.', biasRationale: 'Susținută de Funky Citizens, promovează anticorupția, transparența administrativă, mobilitatea urbană și libertățile civice (-25, centru-stânga civic).', lastAnalysed: '2026-03-21', factualityRationale: 'Nivel ridicat de dovedire a faptelor prin hotărâri CGMB și documente de achiziții publice.' },
   ziaruldeiasi: { id: 'ziaruldeiasi', currentOwner: 'Privat', editorialLine: 'Cel mai important ziar local/regional din nord-estul țării.', biasRationale: 'Ziar quality regional, abordează nuanțat teme politice, cu ușoară tradiție academic/culturală datorată specificului universitar al Iașului.', lastAnalysed: '2026-03-21', factualityRationale: 'Echilibrat și bine documentat.' },
   kanald: { id: 'kanald', currentOwner: 'Dogan Media International', parentCompany: 'Dogan Holding (Turcia)', editorialLine: 'Televiziune generalistă (divertisment majoritar), plus un jurnal de știri cu audiență masivă la nivel național.', biasRationale: 'Canal de TV cu acționariat turc care preferă să stea departe de conflictele politice majore. Oferă știri neutre pe partea politică, preferând subiecte sociale, accidente și drame.', lastAnalysed: '2026-03-21', factualityRationale: 'Tabloidizare/emoționalizare în segmentul social, factual pe evenimente majore.' },
   
@@ -1078,7 +1145,7 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     founders: ['Don Lothrop'],
     currentOwner: 'Don Lothrop',
     editorialLine: 'Jurnalism independent de lung format („slow journalism”), axat pe reportaje de profunzime și analize de impact social.',
-    biasRationale: 'Promovează valorile democratice, statul de drept și protecția mediului. Are o linie editorială progresistă și critică față de sistemul politic tradițional, integrându-se în spectrul centru-stânga prin focusul pe drepturi civile și reformă.',
+    biasRationale: 'Promovează valorile democratice, statul de drept, drepturile civile și protecția mediului. Are o linie editorială moderat progresistă (-30, centru-stânga).',
     lastAnalysed: '2026-03-22',
     factualityRationale: 'Jurnalism documentat masiv, premiat pentru acuratețe.'
   },
@@ -1086,9 +1153,9 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     id: 'europalibera',
     currentOwner: 'US Congress / USAGM',
     parentCompany: 'Radio Free Europe / Radio Liberty',
-    editorialLine: 'Serviciu public internațional cu focus pe democrație, drepturile omului și monitorizarea puterii politice.',
-    biasRationale: 'Finanțat de Congresul SUA, promovează valorile atlantiste și pro-occidentale. Critică ferm autoritarismul și corupția. În contextul românesc, este percepută ca fiind de centru-stânga reformistă datorită focusului pe transparență și instituții.',
-    lastAnalysed: '2026-03-22',
+    editorialLine: 'Serviciu public internațional cu focus pe democrație, drepturile omului, investigații și monitorizarea puterii politice.',
+    biasRationale: 'Finanțată de Congresul SUA (echivalentul american al RFI ca serviciu public internațional), Europa Liberă promovează valorile euroatlantice și jurnalismul factual transpartinic, investigând toate partidele. Se încadrează în centrul spectrului (-5), nu în centru-stânga.',
+    lastAnalysed: '2026-11-26',
     factualityRationale: 'Standarde internaționale riguroase de verificare.'
   },
   caleaeuropeana: {
@@ -1105,7 +1172,7 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     founders: ['Andrei Săvescu'],
     currentOwner: 'Societatea de Științe Juridice',
     editorialLine: 'Portal juridic specializat, oferind noutăți legislative și analize de drept.',
-    biasRationale: 'Sursă tehnică și profesională. Se limitează la interpretări juridice și știri legislative fărtă a lua poziții partizane, fiind o sursă de referință centristă prin obiectivitate tehnică.',
+    biasRationale: 'Sursă tehnică și profesională. Se limitează la interpretări juridice și știri legislative fără a lua poziții partizane, fiind o sursă de referință centristă prin obiectivitate tehnică.',
     lastAnalysed: '2026-03-22',
     factualityRationale: 'Bazat pe texte de lege și practică judiciară.'
   },
@@ -1114,7 +1181,7 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     founders: ['Iulian Andrei', 'Diana Oncioiu', 'Vlad Stoicescu'],
     currentOwner: 'Independent (Asociația Dela0)',
     editorialLine: 'Investigații sociale și reportaje despre categoriile vulnerabile și reformele instituționale.',
-    biasRationale: 'Pune mare accent pe dreptate socială și critica modului în care statul gestionează problemele cetățenilor. Se poziționează în zona centru-stânga prin valorile progresiste și activismul civic prin jurnalism.',
+    biasRationale: 'Pune mare accent pe dreptate socială și critica modului în care statul gestionează problemele cetățenilor. Se poziționează în zona centru-stânga (-40) prin valorile progresiste și activismul civic prin jurnalism.',
     lastAnalysed: '2026-03-22',
     factualityRationale: 'Investigații cu documentare primară solidă.'
   },
@@ -1123,8 +1190,8 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     founders: ['Attila Biro', 'Ana Poenariu'],
     currentOwner: 'Asociația Context',
     editorialLine: 'Unitate de investigații transfrontaliere, parte din rețeaua OCCRP.',
-    biasRationale: 'Podus de jurnaliști de investigație cu experiență, focusat pe crimă organizată și corupție la nivel înalt. Urmează linia jurnalismului anticorupție, specifică centrului-stânga reformist.',
-    lastAnalysed: '2026-03-22',
+    biasRationale: 'Redacție independentă de investigații axată pe crimă organizată, dezinformare și corupție la nivel înalt, similară cu Rise Project. Investigațiile transpartinice o plasează în zona de centru cu ușoară înclinație civică (-15).',
+    lastAnalysed: '2026-11-26',
     factualityRationale: 'Standarde OCCRP de verificare și fact-checking.'
   },
   newsro: {
@@ -1135,6 +1202,75 @@ const PROFILE_TEXTS: Record<string, SourceProfileText> = {
     biasRationale: 'Funcționează ca agenție de furnizare de conținut B2B. Menține un ton factual și echilibrat pentru a satisface o clientelă diversă, fiind o sursă de centru.',
     lastAnalysed: '2026-03-22',
     factualityRationale: 'Sursă primară de știri de agenție.'
+  },
+  republica: {
+    id: 'republica',
+    foundedYear: 2015,
+    founders: ['Claudiu Pândaru', 'Cristian Tudor Popescu', 'Florin Negruțiu', 'Alex Livadaru'],
+    currentOwner: 'Republica Media (independent)',
+    editorialLine: 'Platformă de opinii, analize și comentarii pe teme politice, economice, educație și societate.',
+    biasRationale: 'Republica.ro reunește editorialiști, antreprenori și economiști cu o linie dominant pro-europeană, liberală și favorabilă economiei de piață și reformei statului. Clasificarea anterioară de centru-stânga (-35) era eronată; profilul este de centru cu ușoară înclinație liberal-economică (+10).',
+    lastAnalysed: '2026-11-26',
+    factualityRationale: 'Platformă predominant de opinie și analiză, cu autori asumați și standarde editoriale bune.'
+  },
+  investigatoria: {
+    id: 'investigatoria',
+    foundedYear: 2020,
+    founders: ['Carmen Dumitrescu'],
+    currentOwner: 'Independent (Carmen Dumitrescu)',
+    editorialLine: 'Publicație independentă de investigații axată pe corupție, administrație și justiție.',
+    biasRationale: 'Redacție independentă de anchete transpartinice asupra abuzurilor din administrație și politică. Fără agendă ideologică de stânga, se plasează în zona de centru cu ușoară înclinație civică (-15).',
+    lastAnalysed: '2026-11-26',
+    factualityRationale: 'Investigații documentate pe bază de documente oficiale și surse primare.'
+  },
+  iamnews: {
+    id: 'iamnews',
+    foundedYear: 2024,
+    founders: ['Victor Vrînceanu', 'Simion Apreutese'],
+    currentOwner: 'International Alexander Media SRL (International Alexander Holding 80%, Victor Vrînceanu 20%)',
+    parentCompany: 'I AM MEDIA',
+    editorialLine: 'Site comercial de știri generaliste (politică, social, actualitate), parte din grupul I AM MEDIA (alături de iAMsport și iAMicon).',
+    biasRationale: 'Platformă generalistă cu profil comercial și orientare ușor pro-business/mainstream (+10, centru), fără o linie politică militantă.',
+    lastAnalysed: '2026-11-26',
+    factualityRationale: 'Factualitate mixtă — combinație de știri rapide și subiecte comerciale.'
+  },
+  forbes: {
+    id: 'forbes',
+    foundedYear: 2009,
+    currentOwner: 'BP Publishing Tour (Raluca Michailov)',
+    parentCompany: 'Franciză Forbes Media',
+    editorialLine: 'Revistă și portal de business, antreprenoriat, investiții și leadership.',
+    biasRationale: 'Publicație dedicată mediului de afaceri și antreprenoriatului, cu o orientare naturală pro-piață liberă și pro-capital privat (+25, centru-dreapta economic).',
+    lastAnalysed: '2026-11-26',
+    factualityRationale: 'Factualitate ridicată în zona de business, cu prezență semnificativă de conținut comercial/advertoriale marcate.'
+  },
+  wallstreet: {
+    id: 'wallstreet',
+    foundedYear: 2005,
+    currentOwner: 'InternetCorp',
+    parentCompany: 'InternetCorp',
+    editorialLine: 'Portal online de știri economice, piețe financiare, tech, imobiliare și business.',
+    biasRationale: 'Publicație de business orientată spre economie de piață, investiții și antreprenoriat (+20, centru-dreapta economic), fără partizanat politic direct.',
+    lastAnalysed: '2026-11-26',
+    factualityRationale: 'Factualitate bună în știri economice și de companii.'
+  },
+  contributors: {
+    id: 'contributors',
+    foundedYear: 2010,
+    founders: ['Foști editori HotNews / Asociația Societatea Online'],
+    currentOwner: 'Asociația Societatea Online (asociată istoric cu ecosistemul HotNews / ZYX)',
+    editorialLine: 'Platformă de eseuri, dezbateri intelectuale și analize scrise de profesori, economiști, diplomați și experți.',
+    biasRationale: 'Găzduiește autori din întregul spectru democratic (de la economiști liberali/libertarieni la analiști moderați de centru-stânga), cu o pondere ușor mai mare a vocilor pro-europene și liberale (+5, centru).',
+    lastAnalysed: '2026-11-26',
+    factualityRationale: 'Platformă de opinie și analiză academică/expertă.'
+  },
+  puterea: {
+    id: 'puterea',
+    currentOwner: 'Saray Paper SRL (Mădălin Marian Stan)',
+    editorialLine: 'Cotidian online de știri politice, economice și comentarii cu ton frecvent polemic și anti-sistem.',
+    biasRationale: 'Publicația adoptă un framing frecvent critic la adresa taberei pro-europene/USR și a instituțiilor occidentale, cu accente conservator-naționaliste și populiste (+55, dreapta).',
+    lastAnalysed: '2026-11-26',
+    factualityRationale: 'Factualitate mixtă — combină preluări de știri cu materiale polemice și neechilibrate.'
   },
   panorama: {
     id: 'panorama',

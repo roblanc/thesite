@@ -92,31 +92,31 @@ const BIAS_GUIDE = [
     key: 'left',
     label: 'Stânga',
     range: '≤ -55',
-    description: 'Accent pe politici progresiste, redistribuire și intervenția statului.',
+    description: 'Orientare asumată de stânga, anticapitalistă sau puternic progresistă.',
   },
   {
     key: 'center-left',
     label: 'Centru-Stânga',
     range: '-54 → -20',
-    description: 'Linie reformistă și pro-europeană, cu ton critic moderat.',
+    description: 'Linie moderat progresistă, civic-socială sau apropiată de zona social-democrată.',
   },
   {
     key: 'center',
     label: 'Centru',
     range: '-19 → +19',
-    description: 'Acoperire factuală, fără agendă politică evidentă.',
+    description: 'Acoperire factuală, agenții de presă sau investigații fără agendă de partid.',
   },
   {
     key: 'center-right',
     label: 'Centru-Dreapta',
     range: '+20 → +54',
-    description: 'Perspectivă conservatoare moderată, pro-business.',
+    description: 'Perspectivă liberală, pro-piață, pro-business sau moderat conservatoare.',
   },
   {
     key: 'right',
     label: 'Dreapta',
     range: '≥ +55',
-    description: 'Orientare suveranistă sau conservatoare pe teme economice și sociale.',
+    description: 'Orientare conservatoare dură, naționalistă, suveranistă sau anti-establishment.',
   },
 ] as const;
 

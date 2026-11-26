@@ -34,7 +34,7 @@ describe('applyCoverage', () => {
     it('flags copies, counts independent reports and recomputes the bar', () => {
         const s = applyCoverage(story([
             item('newsro', LEAD, 1),
-            item('antena3', LEAD, 2),
+            item('realitatea', LEAD, 2),
             item('hotnews', 'Reportaj propriu de la Iași, cu declarații ale medicilor și ale managerului spitalului județean.', 3),
         ]));
         expect(s.sourcesCount).toBe(3);

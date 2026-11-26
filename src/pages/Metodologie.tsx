@@ -46,35 +46,35 @@ const BIAS_META = {
         color: "bg-blue-600",
         pill: "border-blue-200 bg-blue-50 text-blue-700",
         description:
-            "Publicații cu orientare progresistă, pro-europeană și accent pe politici sociale sau reformiste.",
+            "Publicații cu orientare asumată de stânga, anticapitalistă sau puternic progresistă, cu accent pe redistribuire și critică socială.",
     },
     "center-left": {
         name: "Centru-stânga",
         color: "bg-blue-400",
         pill: "border-sky-200 bg-sky-50 text-sky-700",
         description:
-            "Publicații moderat progresiste, adesea concentrate pe investigații, corupție și teme civice.",
+            "Publicații moderat progresiste, cu accent pe teme sociale și drepturi civile, sau apropiate de zona social-democrată.",
     },
     center: {
         name: "Centru",
         color: "bg-gray-500",
         pill: "border-gray-200 bg-gray-50 text-gray-700",
         description:
-            "Publicații care urmăresc echilibrul între perspective și evită o afiliere politică explicită.",
+            "Publicații care urmăresc echilibrul factual între perspective, agenții de presă sau redacții de investigație fără agendă de partid.",
     },
     "center-right": {
         name: "Centru-dreapta",
         color: "bg-orange-400",
         pill: "border-orange-200 bg-orange-50 text-orange-700",
         description:
-            "Publicații moderat conservatoare, favorabile de regulă pieței libere și unei retorici mai ordonate.",
+            "Publicații liberale, pro-piață liberă sau moderat conservatoare, inclusiv presa economică și linia pro-europeană liberal-reformistă.",
     },
     right: {
         name: "Dreapta",
         color: "bg-red-600",
         pill: "border-red-200 bg-red-50 text-red-700",
         description:
-            "Publicații cu accent conservator, suveranist sau anti-establishment, critice față de instituțiile mainstream.",
+            "Publicații cu accent conservator dur, naționalist, suveranist sau populist anti-establishment.",
     },
 } as const;
 

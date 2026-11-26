@@ -91,7 +91,7 @@ describe('sideOfScore', () => {
 
 describe('bar', () => {
     it('shows an all-centre story as 100% centre (no leak)', () => {
-        const summary = summarizeCoverage([item('agerpres'), item('economedia'), item('rfi')]);
+        const summary = summarizeCoverage([item('agerpres'), item('cursdeguvernare'), item('rfi')]);
         expect(summary.bias).toEqual({ left: 0, center: 100, right: 0 });
     });
 
@@ -126,9 +126,9 @@ describe('wire copies', () => {
     it('counts a republished agency text once, with the agency score', () => {
         const items = [
             item('newsro', { description: LEAD_A }),
-            item('antena3', { description: LEAD_A }),
+            item('realitatea', { description: LEAD_A }),
             item('romaniatv', { description: LEAD_A }),
-            item('g4media', { description: LEAD_B }),
+            item('hotnews', { description: LEAD_B }),
         ];
         const units = groupReports(items);
         expect(units).toHaveLength(2);
@@ -143,7 +143,7 @@ describe('wire copies', () => {
         expect(summary.outlets).toBe(4);
         expect(summary.independent).toBe(2);
         expect(summary.syndicatedOutlets).toBe(2);
-        // Two antena3/romaniatv copies no longer push the bar to the right.
+        // Two realitatea/romaniatv copies no longer push the bar to the right.
         expect(summary.bias.right).toBe(0);
     });
 
@@ -178,9 +178,9 @@ describe('wire copies', () => {
 });
 
 describe('blindspot', () => {
-    // right: antena3, romaniatv, b1tv, cotidianul; centre: rfi, protv, tvr; left: hotnews, g4media, recorder
+    // right: realitatea, romaniatv, b1tv, cotidianul; centre: rfi, protv, tvr; left: hotnews, snoop, pressone
     const rightOnly = (nCenter: number) => [
-        item('antena3'), item('romaniatv'), item('b1tv'),
+        item('realitatea'), item('romaniatv'), item('b1tv'),
         ...['rfi', 'protv', 'tvr'].slice(0, nCenter).map((id) => item(id)),
     ];
 
@@ -198,12 +198,12 @@ describe('blindspot', () => {
     });
 
     it('does not flag small stories', () => {
-        const items = [item('antena3'), item('romaniatv'), item('b1tv')];
+        const items = [item('realitatea'), item('romaniatv'), item('b1tv')];
         expect(computeBlindspot(summarizeCoverage(items), { ...CONTEXT, articleShare: { left: 0.9, center: 0.05, right: 0.05 } })).toBe('none');
     });
 
     it('needs the other side to have covered it', () => {
-        const items = [item('antena3'), item('romaniatv'), item('rfi'), item('protv'), item('tvr'), item('biziday'), item('agerpres')];
+        const items = [item('realitatea'), item('romaniatv'), item('rfi'), item('protv'), item('tvr'), item('biziday'), item('agerpres')];
         expect(computeBlindspot(summarizeCoverage(items), CONTEXT)).toBe('none');
     });
 
@@ -218,15 +218,15 @@ describe('blindspot', () => {
     });
 
     it('flags the right symmetrically', () => {
-        const items = [item('hotnews'), item('g4media'), item('recorder'), item('rfi'), item('protv'), item('tvr')];
+        const items = [item('hotnews'), item('snoop'), item('pressone'), item('rfi'), item('protv'), item('tvr')];
         expect(computeBlindspot(summarizeCoverage(items), CONTEXT)).toBe('right');
     });
 });
 
 describe('buildCoverageContext', () => {
     it('measures article share and feed health per side', () => {
-        const sources = [{ id: 'hotnews' }, { id: 'g4media' }, { id: 'rfi' }, { id: 'antena3' }];
-        const fetched = [{ source: { id: 'hotnews' } }, { source: { id: 'rfi' } }, { source: { id: 'rfi' } }, { source: { id: 'antena3' } }];
+        const sources = [{ id: 'hotnews' }, { id: 'pressone' }, { id: 'rfi' }, { id: 'realitatea' }];
+        const fetched = [{ source: { id: 'hotnews' } }, { source: { id: 'rfi' } }, { source: { id: 'rfi' } }, { source: { id: 'realitatea' } }];
         const ctx = buildCoverageContext(fetched, sources);
         expect(ctx.articleShare).toEqual({ left: 0.25, center: 0.5, right: 0.25 });
         expect(ctx.feedHealth).toEqual({ left: 0.5, center: 1, right: 1 });
@@ -235,7 +235,7 @@ describe('buildCoverageContext', () => {
 
 describe('coverageView', () => {
     it('uses the server figures when present', () => {
-        const sources = [item('hotnews'), { ...item('antena3'), syndicated: true }, item('rfi')];
+        const sources = [item('hotnews'), { ...item('realitatea'), syndicated: true }, item('rfi')];
         const view = coverageView({ sources, bias: { left: 10, center: 80, right: 10 }, independentCount: 2 });
         expect(view.bias).toEqual({ left: 10, center: 80, right: 10 });
         expect(view.independent).toBe(2);
@@ -244,7 +244,7 @@ describe('coverageView', () => {
     });
 
     it('trusts the bar of a listing card, which has no text to detect copies in', () => {
-        const view = coverageView({ sources: [{ source: { id: 'hotnews' } }, { source: { id: 'antena3' } }], bias: { left: 20, center: 50, right: 30 } });
+        const view = coverageView({ sources: [{ source: { id: 'hotnews' } }, { source: { id: 'realitatea' } }], bias: { left: 20, center: 50, right: 30 } });
         expect(view.bias).toEqual({ left: 20, center: 50, right: 30 });
         expect(view.independent).toBe(2);
         expect(view.outletsBySide).toEqual({ left: 1, center: 0, right: 1 });

@@ -2,577 +2,619 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thesite.ro</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://thesite.ro/tribuni</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://thesite.ro/metodologie</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://thesite.ro/despre</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://thesite.ro/contact</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/politica</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/economie</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/sanatate</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/tehnologie</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/mediu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/sport</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/cultura</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/categorie/international</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/dana-budeanu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/mircea-badea</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/victor-ciutacu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/ctp</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/catalin-tolontan</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/sebastian-zachmann</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/rares-bogdan</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/lucian-mandruta</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/moise-guran</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/anca-alexandrescu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/calin-georgescu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/radu-banciu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/bogdan-chirieac</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/cosmin-gusa</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/andrei-caramitru</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/ion-cristoiu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/traian-basescu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/dan-dungaciu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/cristian-pirvulescu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/voce/sorin-rosca-stanescu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/agerpres</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/mediafax</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/bursa</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/biziday</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/protv</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/tvr</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/europafm</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/digi24</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/hotnews</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/recorder</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/libertatea</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/adevarul</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/newsweek</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/snoop</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/spotmedia</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/paginademedia</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/vice</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/scena9</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/g4media</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/criticatac</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/ziare</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/gandul</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/capital</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/profit</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/zf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/romanialibera</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/observator</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/defapt</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/dailybusiness</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/antena3</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/romaniatv</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/dcnews</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/flux24</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/activenews</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/epochtimes</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/catavencii</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/academiacatavencu</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/wowbiz</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/actualitate</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/factual</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/jurnalul</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/realitatea</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/b1tv</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/aktual24</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/redactia</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/cotidianul</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/comisarul</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/metropolatv</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/romaniajournal</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/romaniainsider</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/pressone</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/europalibera</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/caleaeuropeana</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/juridice</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/dela0</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/context</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/newsro</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thesite.ro/surse/republica</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thesite.ro/surse/investigatoria</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thesite.ro/surse/iamnews</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thesite.ro/surse/forbes</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thesite.ro/surse/wallstreet</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thesite.ro/surse/contributors</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thesite.ro/surse/puterea</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/panorama</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/rra</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/presshub</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/infosudest</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://thesite.ro/surse/misreport</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
